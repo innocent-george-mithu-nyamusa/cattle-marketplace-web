@@ -17,9 +17,11 @@ Coded by www.creative-tim.com
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
+import Stack from "@mui/material/Stack";
 
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
+import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 import MKSocialButton from "components/MKSocialButton";
 
@@ -52,15 +54,17 @@ function Presentation() {
       <DefaultNavbar
         routes={routes}
         action={{
-          type: "external",
-          route: "https://www.creative-tim.com/product/material-kit-react",
-          label: "free download",
-          color: "info",
+          type: "external",    
+          route: "",
+          label: "login",
+          color: "secondary",
         }}
-        sticky
+        transparent
+        relative
+        center
       />
       <MKBox
-        minHeight="75vh"
+        minHeight="100vh"
         width="100%"
         sx={{
           backgroundImage: `url(${bgImage})`,
@@ -71,30 +75,28 @@ function Presentation() {
         }}
       >
         <Container>
-          <Grid container item xs={12} lg={7} justifyContent="center" mx="auto">
+          <Grid container item xs={12} md={7} lg={6} flexDirection="column" justifyContent="center">
             <MKTypography
               variant="h1"
               color="white"
-              mt={-6}
-              mb={1}
+              mb={3}
               sx={({ breakpoints, typography: { size } }) => ({
                 [breakpoints.down("md")]: {
                   fontSize: size["3xl"],
                 },
               })}
             >
-              Material Kit 2 React{" "}
+              Cattle Marketplace
             </MKTypography>
-            <MKTypography
-              variant="body1"
-              color="white"
-              textAlign="center"
-              px={{ xs: 6, lg: 12 }}
-              mt={1}
-            >
-              Free & Open Source Web UI Kit built over ReactJS &amp; MUI. Join over 1.6 million
-              developers around the world.
+            <MKTypography variant="body1" color="white" opacity={0.8} pr={6} mr={6}>
+              Transforming the livestock ecosytem, one animal at a time.
             </MKTypography>
+            <Stack direction="row" spacing={1} mt={3}>
+              <MKButton color="white">Get Started</MKButton>
+              <MKButton variant="text" color="white">
+                Read more
+              </MKButton>
+            </Stack>
           </Grid>
         </Container>
       </MKBox>
