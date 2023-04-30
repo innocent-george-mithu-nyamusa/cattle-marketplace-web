@@ -35,6 +35,7 @@ import MuiLink from "@mui/material/Link";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
+import MKSvgIcon from "components/MKSvgIcon";
 
 // Material Kit 2 React example components
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
@@ -472,8 +473,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           <MKBox
             component={Link}
             to="/"
-            lineHeight={1}
-            py={transparent ? 1.5 : 0.75}
+            lineHeight={1.5}
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
           >
             <MKTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
@@ -551,7 +551,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
 
 // Setting default values for the props of DefaultNavbar
 DefaultNavbar.defaultProps = {
-  brand: "Material Kit 2",
+  brand: <MKSvgIcon fontSize="large" inheritViewBox={true} />,
   transparent: false,
   light: false,
   action: false,
