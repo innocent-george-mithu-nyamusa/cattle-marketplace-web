@@ -54,7 +54,7 @@ function Presentation() {
       <DefaultNavbar
         routes={routes}
         action={{
-          type: "external",    
+          type: "external",
           route: "",
           label: "login",
           color: "secondary",

@@ -2,7 +2,7 @@ import SvgIcon from "@mui/material/SvgIcon";
 
 function MKSvgIcon(props) {
   return (
-    <SvgIcon {...props} >
+    <SvgIcon {...props}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620.63 276.8">
         <g id="a843ad51-0aed-4627-8239-85d7075a26ee" data-name="Layer 2">
           <g id="abd3c506-83db-4db1-abe9-846e5ecadfeb" data-name="Layer 3">
