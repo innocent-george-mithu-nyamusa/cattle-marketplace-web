@@ -60,7 +60,7 @@ function Presentation() {
           color: "secondary",
         }}
         transparent
-        relative
+        light
         center
       />
       <MKBox
@@ -86,15 +86,15 @@ function Presentation() {
                 },
               })}
             >
-              Cattle Marketplace
+              Livestock Marketplace
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} pr={6} mr={6}>
               Transforming the livestock ecosytem, one animal at a time.
             </MKTypography>
             <Stack direction="row" spacing={1} mt={3}>
-              <MKButton color="white">Get Started</MKButton>
+              <MKButton color="white">Buy Livestock</MKButton>
               <MKButton variant="text" color="white">
-                Read more
+                i am a farmer
               </MKButton>
             </Stack>
           </Grid>

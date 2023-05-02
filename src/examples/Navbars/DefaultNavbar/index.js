@@ -35,7 +35,6 @@ import MuiLink from "@mui/material/Link";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
-import MKSvgIcon from "components/MKSvgIcon";
 
 // Material Kit 2 React example components
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
@@ -551,7 +550,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
 
 // Setting default values for the props of DefaultNavbar
 DefaultNavbar.defaultProps = {
-  brand: <MKSvgIcon fontSize="large" inheritViewBox={true} />,
+  brand: "Livestock Marketplace",
   transparent: false,
   light: false,
   action: false,
