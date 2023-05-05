@@ -43,10 +43,11 @@ import Icon from "@mui/material/Icon";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 // Pages
-import AboutUs from "layouts/pages/landing-pages/about-us";
-import ContactUs from "layouts/pages/landing-pages/contact-us";
-import Author from "layouts/pages/landing-pages/author";
+// import AboutUs from "layouts/pages/landing-pages/about-us";
+// import ContactUs from "layouts/pages/landing-pages/contact-us";
+// import Author from "layouts/pages/landing-pages/author";
 import SignIn from "layouts/pages/authentication/sign-in";
+import Homepage from "layouts/pages/homepage";
 
 // Sections
 import PageHeaders from "layouts/sections/page-sections/page-headers";
@@ -79,187 +80,82 @@ const routes = [
         name: "Cattle",
         collapse: [
           {
-            name: "Mashona",
+            name: "mashona",
             route: "/livestock/cattle/mashona",
-            component: <AboutUs />,
+            component: <Homepage />,
           },
           {
-            name: "contact us",
-            route: "/pages/landing-pages/contact-us",
-            component: <ContactUs />,
+            name: "brahman",
+            route: "/livestock/cattle/brahman",
+            component: <Homepage />,
           },
           {
-            name: "author",
-            route: "/pages/landing-pages/author",
-            component: <Author />,
+            name: "hereford",
+            route: "/livestock/cattle/hereford",
+            component: <Homepage />,
+          },
+          {
+            name: "simmental",
+            route: "/livestock/cattle/simmental",
+            component: <Homepage />,
+          },
+          {
+            name: "aberdeen-angus",
+            route: "/livestock/cattle/arbedeen-angus",
+            component: <Homepage />,
+          },
+          {
+            name: "charolais",
+            route: "/livestock/cattle/arbedeen-angus",
+            component: <Homepage />,
           },
         ],
       },
       {
-        name: "account",
+        name: "others",
         collapse: [
           {
-            name: "sign in",
-            route: "/pages/authentication/sign-in",
-            component: <SignIn />,
+            name: "sheep",
+            route: "/livestock/cattle/sheep",
+            component: <Homepage />,
+          },
+          {
+            name: "goats",
+            route: "/livestock/cattle/goats",
+            component: <Homepage />,
+          },
+          {
+            name: "pigs",
+            route: "/livestock/cattle/pigs",
+            component: <Homepage />,
           },
         ],
       },
     ],
   },
   {
-    name: "sections",
-    icon: <Icon>view_day</Icon>,
-    collapse: [
-      {
-        name: "page sections",
-        description: "See all sections",
-        dropdown: true,
-        collapse: [
-          {
-            name: "page headers",
-            route: "/sections/page-sections/page-headers",
-            component: <PageHeaders />,
-          },
-          {
-            name: "features",
-            route: "/sections/page-sections/features",
-            component: <Features />,
-          },
-        ],
-      },
-      {
-        name: "navigation",
-        description: "See all navigations",
-        dropdown: true,
-        collapse: [
-          {
-            name: "navbars",
-            route: "/sections/navigation/navbars",
-            component: <Navbars />,
-          },
-          {
-            name: "nav tabs",
-            route: "/sections/navigation/nav-tabs",
-            component: <NavTabs />,
-          },
-          {
-            name: "pagination",
-            route: "/sections/navigation/pagination",
-            component: <Pagination />,
-          },
-        ],
-      },
-      {
-        name: "input areas",
-        description: "See all input areas",
-        dropdown: true,
-        collapse: [
-          {
-            name: "inputs",
-            route: "/sections/input-areas/inputs",
-            component: <Inputs />,
-          },
-          {
-            name: "forms",
-            route: "/sections/input-areas/forms",
-            component: <Forms />,
-          },
-        ],
-      },
-      {
-        name: "attention catchers",
-        description: "See all examples",
-        dropdown: true,
-        collapse: [
-          {
-            name: "alerts",
-            route: "/sections/attention-catchers/alerts",
-            component: <Alerts />,
-          },
-          {
-            name: "modals",
-            route: "/sections/attention-catchers/modals",
-            component: <Modals />,
-          },
-          {
-            name: "tooltips & popovers",
-            route: "/sections/attention-catchers/tooltips-popovers",
-            component: <TooltipsPopovers />,
-          },
-        ],
-      },
-      {
-        name: "elements",
-        description: "See all 32 examples",
-        dropdown: true,
-        collapse: [
-          {
-            name: "avatars",
-            route: "/sections/elements/avatars",
-            component: <Avatars />,
-          },
-          {
-            name: "badges",
-            route: "/sections/elements/badges",
-            component: <Badges />,
-          },
-          {
-            name: "breadcrumbs",
-            route: "/sections/elements/breadcrumbs",
-            component: <BreadcrumbsEl />,
-          },
-          {
-            name: "buttons",
-            route: "/sections/elements/buttons",
-            component: <Buttons />,
-          },
-          {
-            name: "dropdowns",
-            route: "/sections/elements/dropdowns",
-            component: <Dropdowns />,
-          },
-          {
-            name: "progress bars",
-            route: "/sections/elements/progress-bars",
-            component: <ProgressBars />,
-          },
-          {
-            name: "toggles",
-            route: "/sections/elements/toggles",
-            component: <Toggles />,
-          },
-          {
-            name: "typography",
-            route: "/sections/elements/typography",
-            component: <Typography />,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "docs",
+    name: "what you need to know",
     icon: <Icon>article</Icon>,
     collapse: [
       {
         name: "getting started",
-        description: "All about overview, quick start, license and contents",
+        description: "See how you can get your livestock with ease.",
         href: "https://www.creative-tim.com/learning-lab/react/quick-start/material-kit/",
       },
       {
-        name: "foundation",
-        description: "See our colors, icons and typography",
+        name: "overview",
+        description: "Your role in getting the livestock you purchased, see the process",
         href: "https://www.creative-tim.com/learning-lab/react/colors/material-kit/",
       },
       {
-        name: "components",
-        description: "Explore our collection of fully designed components",
+        name: "innovation",
+        description: "Explore our innovative strategy on how you can make a purchase from anywhere",
         href: "https://www.creative-tim.com/learning-lab/react/alerts/material-kit/",
       },
       {
-        name: "plugins",
-        description: "Check how you can integrate our plugins",
+        name: "requirements",
+        description:
+          "Check on information we need from you to transfer to you ,  your purchased stock.",
         href: "https://www.creative-tim.com/learning-lab/react/datepicker/material-kit/",
       },
     ],
