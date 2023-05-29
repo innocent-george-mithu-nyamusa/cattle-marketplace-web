@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "author": "PixelsZw",
-  "description": "React version of Material Livestock ",
+  "description": "React version of Livestock Marketplace",
   "dependencies": {
     "@emotion/cache": "11.10.7",
     "@emotion/react": "11.10.6",

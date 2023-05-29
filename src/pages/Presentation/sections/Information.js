@@ -42,21 +42,21 @@ function Information() {
                 icon="touch_app"
                 title={
                   <>
-                    Feel the
+                    Get Things Done
                     <br />
-                    Material Kit
+                    Without Lifing Finger
                   </>
                 }
-                description="All the MUI components that you need in a development have been re-design with the new look."
+                description="All the proceses have been designed to get you the best service possible."
               />
               <RotatingCardBack
                 image={bgBack}
-                title="Discover More"
-                description="You will save a lot of time going from prototyping to full-functional code because all elements are implemented."
+                title="Sell More"
+                description="As a farmer you will have more means to sell your product for the best price."
                 action={{
                   type: "internal",
                   route: "/sections/page-sections/page-headers",
-                  label: "start with header",
+                  label: "start selling",
                 }}
               />
             </RotatingCard>
@@ -66,16 +66,17 @@ function Information() {
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="content_copy"
-                  title="Full Documentation"
-                  description="Built by developers for developers. Check the foundation and you will find
-                    everything inside our documentation."
+                  title="Full Ownership Transfer"
+                  description="We have streamlined the animal acquistion process so that you do not have to deal with any
+                  legalities concerning ownership. You buy, we handle ownership transfers."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="flip_to_front"
-                  title="MUI Ready"
-                  description="The world's most popular react components library for building user interfaces."
+                  title="See what you're buying"
+                  description="We have an innovative way that allows you to see what you are buying from anywhere before you
+                  make the commitment to buy."
                 />
               </Grid>
             </Grid>
@@ -84,14 +85,16 @@ function Information() {
                 <DefaultInfoCard
                   icon="price_change"
                   title="Save Time & Money"
-                  description="Creating your design from scratch with dedicated designers can be very expensive. Start with our Design System."
+                  description="Not only will you get the best benefit for your money, we have developed an innovative process
+                  that will save you 60% of your time ."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="devices"
-                  title="Fully Responsive"
-                  description="Regardless of the screen size, the website content will naturally fit the given resolution."
+                  title="Without lifting a Finger"
+                  description="Regardless of where you are ,you can make your purchase and we will have your livestock delivered
+                  to your address of choice."
                 />
               </Grid>
             </Grid>

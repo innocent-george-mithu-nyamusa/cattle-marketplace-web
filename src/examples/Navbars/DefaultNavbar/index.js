@@ -490,19 +490,36 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           <MKBox ml={{ xs: "auto", lg: 0 }}>
             {action &&
               (action.type === "internal" ? (
-                <MKButton
-                  component={Link}
-                  to={action.route}
-                  variant={
-                    action.color === "white" || action.color === "default"
-                      ? "contained"
-                      : "gradient"
-                  }
-                  color={action.color ? action.color : "info"}
-                  size="small"
-                >
-                  {action.label}
-                </MKButton>
+                ((
+                  <MKButton
+                    component={Link}
+                    to={action.route}
+                    variant={
+                      action.color === "white" || action.color === "default"
+                        ? "contained"
+                        : "gradient"
+                    }
+                    color={action.color ? action.color : "info"}
+                    size="small"
+                  >
+                    {action.label}
+                  </MKButton>
+                ),
+                (
+                  <MKButton
+                    component={Link}
+                    to={action.route}
+                    variant={
+                      action.color === "white" || action.color === "default"
+                        ? "contained"
+                        : "gradient"
+                    }
+                    color={action.color ? action.color : "info"}
+                    size="small"
+                  >
+                    {action.label}
+                  </MKButton>
+                ))
               ) : (
                 <MKButton
                   component="a"

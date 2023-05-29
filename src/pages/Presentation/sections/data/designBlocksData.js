@@ -1,259 +1,314 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
+// const imagesPrefix =
+//   "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/sections";
 
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+// Cattle
+import calf from "assets/images/animals/cattle/angus/aberdeen-angus-calf.jpg";
+import angusMale from "assets/images/animals/cattle/angus/arbedeen-angus-male.jpg";
+import angusFemale from "assets/images/animals/cattle/angus/aberdeen-angus-female.jpg";
 
-Coded by www.creative-tim.com
+import brahmanCalf from "assets/images/animals/cattle/brahman/brahman-calf.jpg";
+import brahmanMale from "assets/images/animals/cattle/brahman/brahman-male.jpg";
+import brahmanFemale from "assets/images/animals/cattle/brahman/brahman-female.jpg";
 
- =========================================================
+import chrolaisCalf from "assets/images/animals/cattle/chrolais/chrolais-calf.jpg";
+import chrolaisMale from "assets/images/animals/cattle/chrolais/chrolais-male.jpg";
+import chrolaisFemale from "assets/images/animals/cattle/chrolais/chrolais-female.jpg";
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
+import herefordCalf from "assets/images/animals/cattle/hereford/hereford-calf.jpg";
+import herefordMale from "assets/images/animals/cattle/hereford/hereford-male.jpg";
+import herefordFemale from "assets/images/animals/cattle/hereford/hereford-female.jpg";
 
-const imagesPrefix =
-  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/sections";
+import mashonaCalf from "assets/images/animals/cattle/mashona/mashona-calf.jpg";
+import mashonaMale from "assets/images/animals/cattle/mashona/mashona-male.jpg";
+import mashonaFemale from "assets/images/animals/cattle/mashona/mashona-female.jpg";
+
+// Goats
+import boerKid from "assets/images/animals/goats/boer/boer-kid.jpg";
+import boerMale from "assets/images/animals/goats/boer/boer-male.jpg";
+import boerFemale from "assets/images/animals/goats/boer/boer-female.jpg";
+
+import kalahariRedFemale from "assets/images/animals/goats/kalahari-red/kalahari-red-female.jpg";
+import kalahariRedMale from "assets/images/animals/goats/kalahari-red/kalahari-red-male.jpg";
+import kalahariRedKid from "assets/images/animals/goats/kalahari-red/kalahari-red-kid.jpg";
+
+import mashonaGoatFemale from "assets/images/animals/goats/mashona/mashona-goat.jpg";
+
+import saanenFemale from "assets/images/animals/goats/saanen/saanen-female.jpg";
+import saanenMale from "assets/images/animals/goats/saanen/saanen-male.jpg";
+import saanenKid from "assets/images/animals/goats/saanen/saanen-kid.jpg";
+
+import toggenburgKid from "assets/images/animals/goats/toggenburg/toggenburg-kid.jpg";
+import toggenburgMale from "assets/images/animals/goats/toggenburg/toggenburg-male.jpg";
+import toggenburgFemale from "assets/images/animals/goats/toggenburg/toggenburg-female.jpg";
+
+// Pigs
+import durocPiglet from "assets/images/animals/pigs/duroc/duroc-piglet.jpg";
+import durocFemale from "assets/images/animals/pigs/duroc/duroc-female.jpg";
+
+import hampshirePiglet from "assets/images/animals/pigs/hampshire/hampshire-piglet.jpg";
+import hampshireFemale from "assets/images/animals/pigs/hampshire/hampshire-female.jpg";
+import hampshireMale from "assets/images/animals/pigs/hampshire/hampshire-male.jpg";
+
+import landracePiglet from "assets/images/animals/pigs/landrace/landrace-piglet.jpg";
+import landraceMale from "assets/images/animals/pigs/landrace/landrace-male.jpg";
+import landraceFemale from "assets/images/animals/pigs/landrace/landrace-female.jpg";
+
+import largeWhiteFemale from "assets/images/animals/pigs/large-white/large-white-female.jpg";
+import largeWhitePiglet from "assets/images/animals/pigs/large-white/large-white-piglet.jpg";
+import largeWhiteMale from "assets/images/animals/pigs/large-white/large-white-male.jpg";
+
+import pietrainFemale from "assets/images/animals/pigs/pietrain/pietrain-female.jpg";
+import pietrainMale from "assets/images/animals/pigs/pietrain/pietrain-male.jpg";
+import pietrainPiglet from "assets/images/animals/pigs/pietrain/pietrain-piglet.jpg";
 
 export default [
   {
-    title: "Design Blocks",
-    description: "A selection of 45 page sections that fit perfectly in any combination",
+    title: "Cattle Breeds",
+    description: "A careful selection of cattle breeds found in Zimbabwe.",
     items: [
       {
-        image: `${imagesPrefix}/headers.jpg`,
-        name: "Page Headers",
+        image: `${calf}`,
+        name: "Aberdeen Angus Calf",
         count: 10,
         route: "/sections/page-sections/page-headers",
       },
       {
-        image: `${imagesPrefix}/features.jpg`,
-        name: "Features",
+        image: `${angusMale}`,
+        name: "Aberdeen Angus Male",
         count: 14,
         route: "/sections/page-sections/features",
       },
       {
-        image: `${imagesPrefix}/pricing.jpg`,
-        name: "Pricing",
+        image: `${angusFemale}`,
+        name: "Aberdeen Angus Female",
         count: 8,
-        pro: true,
       },
       {
-        image: `${imagesPrefix}/faq.jpg`,
-        name: "FAQ",
+        image: `${brahmanCalf}`,
+        name: "Brahman Calf",
         count: 1,
-        pro: true,
       },
       {
-        image: `${imagesPrefix}/blogs.jpg`,
-        name: "Blog Posts",
+        image: `${brahmanMale}`,
+        name: "Brahman Male",
         count: 11,
-        pro: true,
       },
       {
-        image: `${imagesPrefix}/testimonials.jpg`,
-        name: "Testimonials",
+        image: `${brahmanFemale}`,
+        name: "Brahman Female",
         count: 11,
-        pro: true,
       },
       {
-        image: `${imagesPrefix}/teams.jpg`,
-        name: "Teams",
+        image: `${chrolaisCalf}`,
+        name: "Chrolais Calf",
         count: 6,
-        pro: true,
       },
       {
-        image: `${imagesPrefix}/stats.jpg`,
-        name: "Stats",
+        image: `${chrolaisMale}`,
+        name: "Chrolais Male",
         count: 3,
-        pro: true,
       },
       {
-        image: `${imagesPrefix}/call-to-action.jpg`,
-        name: "Call to Actions",
+        image: `${chrolaisFemale}`,
+        name: "Chrolais Female",
         count: 8,
-        pro: true,
       },
       {
-        image: `${imagesPrefix}/projects.jpg`,
-        name: "Applications",
+        image: `${herefordCalf}`,
+        name: "Hereford Calf",
         count: 6,
-        pro: true,
       },
       {
-        image: `${imagesPrefix}/logo-area.jpg`,
-        name: "Logo Areas",
+        image: `${herefordMale}`,
+        name: "Hereford Male",
         count: 4,
-        pro: true,
       },
       {
-        image: `${imagesPrefix}/footers.jpg`,
-        name: "Footers",
+        image: `${herefordFemale}`,
+        name: "Hereford Female",
         count: 10,
-        pro: true,
       },
       {
-        image: `${imagesPrefix}/general-cards.jpg`,
-        name: "General Cards",
+        image: `${mashonaCalf}`,
+        name: "Mashona Calf",
+        count: 10,
+      },
+      {
+        image: `${mashonaMale}`,
+        name: "Mashona Male",
         count: 9,
-        pro: true,
       },
       {
-        image: `${imagesPrefix}/content-sections.jpg`,
-        name: "Content Sections",
+        image: `${mashonaFemale}`,
+        name: "Mashona Female",
         count: 8,
-        pro: true,
       },
     ],
   },
   {
-    title: "Navigation",
-    description: "30+ components that will help go through the pages",
+    title: "Pig Breeds",
+    description: "10+ breeds ",
     items: [
       {
-        image: `${imagesPrefix}/navbars.jpg`,
-        name: "Navbars",
+        image: `${durocPiglet}`,
+        name: "Duroc Piglet",
         count: 4,
         route: "/sections/navigation/navbars",
       },
       {
-        image: `${imagesPrefix}/nav-tabs.jpg`,
-        name: "Nav Tabs",
-        count: 2,
-        route: "/sections/navigation/nav-tabs",
+        image: `${durocFemale}`,
+        name: "Duroc Female",
+        count: 4,
+        route: "/sections/navigation/navbars",
       },
       {
-        image: `${imagesPrefix}/pagination.jpg`,
-        name: "Pagination",
-        count: 3,
-        route: "/sections/navigation/pagination",
+        image: `${durocFemale}`,
+        name: "Duroc Male",
+        count: 4,
+        route: "/sections/navigation/navbars",
+      },
+      {
+        image: `${hampshirePiglet}`,
+        name: "Hampshire Piglet",
+        count: 4,
+        route: "/sections/navigation/navbars",
+      },
+      {
+        image: `${hampshireMale}`,
+        name: "Hampshire Male",
+        count: 4,
+        route: "/sections/navigation/navbars",
+      },
+      {
+        image: `${hampshireFemale}`,
+        name: "Hampshire Female",
+        count: 4,
+        route: "/sections/navigation/navbars",
+      },
+      {
+        image: `${landracePiglet}`,
+        name: "Landrace Piglet",
+        count: 4,
+        route: "/sections/navigation/navbars",
+      },
+      {
+        image: `${landraceMale}`,
+        name: "Landrace Male",
+        count: 4,
+        route: "/sections/navigation/navbars",
+      },
+      {
+        image: `${landraceFemale}`,
+        name: "Landrace Female",
+        count: 4,
+        route: "/sections/navigation/navbars",
+      },
+      {
+        image: `${largeWhitePiglet}`,
+        name: "Large White Piglet",
+        count: 4,
+        route: "/sections/navigation/navbars",
+      },
+      {
+        image: `${largeWhiteMale}`,
+        name: "Large White Male",
+        count: 4,
+        route: "/sections/navigation/navbars",
+      },
+      {
+        image: `${largeWhiteFemale}`,
+        name: "Large White Female",
+        count: 4,
+        route: "/sections/navigation/navbars",
+      },
+      {
+        image: `${pietrainPiglet}`,
+        name: "Pietrain Piglet",
+        count: 4,
+        route: "/sections/navigation/navbars",
+      },
+      {
+        image: `${pietrainMale}`,
+        name: "Pietrain Male",
+        count: 4,
+        route: "/sections/navigation/navbars",
+      },
+      {
+        image: `${pietrainFemale}`,
+        name: "Pietrain Female",
+        count: 4,
+        route: "/sections/navigation/navbars",
       },
     ],
   },
   {
-    title: "Input Areas",
-    description: "50+ elements that you need for text manipulation and insertion",
+    title: "Goat Breeds",
+    description: "50+ goat breeds to chose in any ratio of choice from kids to adult goats.",
     items: [
       {
-        image: `${imagesPrefix}/newsletters.jpg`,
-        name: "Newsletters",
+        image: `${boerKid}`,
+        name: "Boer kid",
         count: 6,
-        pro: true,
       },
       {
-        image: `${imagesPrefix}/contact-sections.jpg`,
-        name: "Contact Sections",
+        image: `${boerMale}`,
+        name: "Boer Male",
         count: 8,
-        pro: true,
       },
       {
-        image: `${imagesPrefix}/forms.jpg`,
-        name: "Forms",
+        image: `${boerFemale}`,
+        name: "boer Female",
         count: 3,
-        route: "/sections/input-areas/forms",
       },
       {
-        image: `${imagesPrefix}/inputs.jpg`,
-        name: "Inputs",
+        image: `${kalahariRedKid}`,
+        name: "Kalahari Red Kid",
         count: 6,
-        route: "/sections/input-areas/inputs",
-      },
-    ],
-  },
-  {
-    title: "Attention Catchers",
-    description: "20+ Fully coded components that popup from different places of the screen",
-    items: [
-      {
-        image: `${imagesPrefix}/alerts.jpg`,
-        name: "Alerts",
-        count: 4,
-        route: "/sections/attention-catchers/alerts",
       },
       {
-        image: `${imagesPrefix}/toasts.jpg`,
-        name: "Notifications",
-        count: 3,
-        pro: true,
-      },
-      {
-        image: `${imagesPrefix}/popovers.jpg`,
-        name: "Tooltips & Popovers",
-        count: 2,
-        route: "/sections/attention-catchers/tooltips-popovers",
-      },
-      {
-        image: `${imagesPrefix}/modals.jpg`,
-        name: "Modals",
-        count: 5,
-        route: "/sections/attention-catchers/modals",
-      },
-    ],
-  },
-  {
-    title: "Elements",
-    description: "80+ carefully crafted small elements that come with multiple colors and shapes",
-    items: [
-      {
-        image: `${imagesPrefix}/buttons.jpg`,
-        name: "Buttons",
+        image: `${kalahariRedMale}`,
+        name: "Kalahari Red Male",
         count: 6,
-        route: "/sections/elements/buttons",
       },
       {
-        image: `${imagesPrefix}/avatars.jpg`,
-        name: "Avatars",
-        count: 2,
-        route: "/sections/elements/avatars",
+        image: `${kalahariRedFemale}`,
+        name: "Kalahari Red Female",
+        count: 6,
       },
       {
-        image: `${imagesPrefix}/dropdowns.jpg`,
-        name: "Dropdowns",
-        count: 2,
-        route: "/sections/elements/dropdowns",
+        image: `${saanenKid}`,
+        name: "Saanen Kid",
+        count: 6,
       },
       {
-        image: `${imagesPrefix}/switch.jpg`,
-        name: "Toggles",
-        count: 2,
-        route: "/sections/elements/toggles",
+        image: `${saanenMale}`,
+        name: "Saanen Male",
+        count: 6,
       },
       {
-        image: `${imagesPrefix}/social-buttons.jpg`,
-        name: "Social Buttons",
-        count: 2,
-        pro: true,
+        image: `${saanenFemale}`,
+        name: "Saanen Female",
+        count: 6,
       },
       {
-        image: `${imagesPrefix}/breadcrumbs.jpg`,
-        name: "Breadcrumbs",
-        count: 1,
-        route: "/sections/elements/breadcrumbs",
+        image: `${toggenburgKid}`,
+        name: "Toggenburg Kid",
+        count: 6,
       },
       {
-        image: `${imagesPrefix}/badges.jpg`,
-        name: "Badges",
-        count: 3,
-        route: "/sections/elements/badges",
+        image: `${toggenburgMale}`,
+        name: "Toggenburg Female",
+        count: 6,
       },
       {
-        image: `${imagesPrefix}/progress.jpg`,
-        name: "Progress Bars",
-        count: 4,
-        route: "/sections/elements/progress-bars",
+        image: `${toggenburgFemale}`,
+        name: "Toggenburg Female",
+        count: 6,
       },
       {
-        image: `${imagesPrefix}/tables.jpg`,
-        name: "Tables",
-        count: 3,
-        pro: true,
-      },
-      {
-        image: `${imagesPrefix}/typography.jpg`,
-        name: "Typography",
-        count: 2,
-        route: "/sections/elements/typography",
+        image: `${mashonaGoatFemale}`,
+        name: "Mashona Goat Female",
+        count: 6,
       },
     ],
   },

@@ -46,15 +46,15 @@ function BuiltByDevelopers() {
       <Container>
         <Grid container item xs={12} lg={6} sx={{ ml: { xs: 0, lg: 6 } }}>
           <MKTypography variant="h4" color="white" fontWeight="bold">
-            Built by developers
+            Built for farmers alike
           </MKTypography>
           <MKTypography variant="h1" color="white" mb={1}>
-            Complex Documentation
+            Transparent processes
           </MKTypography>
           <MKTypography variant="body1" color="white" opacity={0.8} mb={2}>
-            From colors, cards, typography to complex elements, you will find the full
-            documentation. Play with the utility classes and you will create unlimited combinations
-            for our components.
+            From handling animal appraisal, purchases, processing animal ownership tranfer, and
+            delivering livestock to their designated destination. The handling of anything in
+            between is handled by our team. All you have to do is sit back and relax.
           </MKTypography>
           <MKTypography
             component="a"
