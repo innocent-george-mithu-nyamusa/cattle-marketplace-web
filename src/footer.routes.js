@@ -8,13 +8,13 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import MKTypography from "components/MKTypography";
 
 // Images
-import logoCT from "assets/images/logo-ct-dark.png";
+import logoCT from "assets/images/logo.png";
 
 const date = new Date().getFullYear();
 
 export default {
   brand: {
-    name: "Material Kit 2",
+    name: "Livestock Marketplace",
     image: logoCT,
     route: "/",
   },
@@ -49,9 +49,9 @@ export default {
     {
       name: "resources",
       items: [
-        { name: "illustrations", href: "https://iradesign.io/" },
-        { name: "bits & snippets", href: "https://www.creative-tim.com/bits" },
-        { name: "affiliate program", href: "https://www.creative-tim.com/affiliates/new" },
+        { name: "ios application", href: "https://iradesign.io/" },
+        { name: "android application", href: "https://www.creative-tim.com/bits" },
+        { name: "affiliate programs", href: "https://www.creative-tim.com/affiliates/new" },
       ],
     },
     {
@@ -74,16 +74,16 @@ export default {
   ],
   copyright: (
     <MKTypography variant="button" fontWeight="regular">
-      All rights reserved. Copyright &copy; {date} Material Kit by{" "}
+      All rights reserved. Copyright &copy; {date}{" "}
       <MKTypography
         component="a"
-        href="https://www.creative-tim.com"
+        href="http://www.pixels.co.zw"
         target="_blank"
         rel="noreferrer"
         variant="button"
         fontWeight="regular"
       >
-        Creative Tim
+        PixelsZw
       </MKTypography>
       .
     </MKTypography>

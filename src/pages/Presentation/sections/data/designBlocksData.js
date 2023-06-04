@@ -1,65 +1,65 @@
-// const imagesPrefix =
-//   "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/sections";
+const imagesPrefix =
+  "https://raw.githubusercontent.com/innocent-george-mithu-nyamusa/cattle-marketplace-web/main/src/assets/images/animals";
 
 // Cattle
-import calf from "assets/images/animals/cattle/angus/aberdeen-angus-calf.jpg";
-import angusMale from "assets/images/animals/cattle/angus/arbedeen-angus-male.jpg";
-import angusFemale from "assets/images/animals/cattle/angus/aberdeen-angus-female.jpg";
+const calf = `${imagesPrefix}/cattle/angus/aberdeen-angus-calf.jpg`;
+const angusMale = `${imagesPrefix}/cattle/angus/arbedeen-angus-male.jpg`;
+const angusFemale = `${imagesPrefix}/cattle/angus/aberdeen-angus-female.jpg`;
 
-import brahmanCalf from "assets/images/animals/cattle/brahman/brahman-calf.jpg";
-import brahmanMale from "assets/images/animals/cattle/brahman/brahman-male.jpg";
-import brahmanFemale from "assets/images/animals/cattle/brahman/brahman-female.jpg";
+const brahmanCalf = `${imagesPrefix}/cattle/brahman/brahman-calf.jpg`;
+const brahmanMale = `${imagesPrefix}/cattle/brahman/brahman-male.jpg`;
+const brahmanFemale = `${imagesPrefix}/cattle/brahman/brahman-female.jpg`;
 
-import chrolaisCalf from "assets/images/animals/cattle/chrolais/chrolais-calf.jpg";
-import chrolaisMale from "assets/images/animals/cattle/chrolais/chrolais-male.jpg";
-import chrolaisFemale from "assets/images/animals/cattle/chrolais/chrolais-female.jpg";
+const chrolaisCalf = `${imagesPrefix}/cattle/chrolais/chrolais-calf.jpg`;
+const chrolaisMale = `${imagesPrefix}/cattle/chrolais/chrolais-male.jpg`;
+const chrolaisFemale = `${imagesPrefix}/cattle/chrolais/chrolais-female.jpg`;
 
-import herefordCalf from "assets/images/animals/cattle/hereford/hereford-calf.jpg";
-import herefordMale from "assets/images/animals/cattle/hereford/hereford-male.jpg";
-import herefordFemale from "assets/images/animals/cattle/hereford/hereford-female.jpg";
+const herefordCalf = `${imagesPrefix}/cattle/hereford/hereford-calf.jpg`;
+const herefordMale = `${imagesPrefix}/cattle/hereford/hereford-male.jpg`;
+const herefordFemale = `${imagesPrefix}/cattle/hereford/hereford-female.jpg`;
 
-import mashonaCalf from "assets/images/animals/cattle/mashona/mashona-calf.jpg";
-import mashonaMale from "assets/images/animals/cattle/mashona/mashona-male.jpg";
-import mashonaFemale from "assets/images/animals/cattle/mashona/mashona-female.jpg";
+const mashonaCalf = `${imagesPrefix}/cattle/mashona/mashona-calf.jpg`;
+const mashonaMale = `${imagesPrefix}/cattle/mashona/mashona-male.jpg`;
+const mashonaFemale = `${imagesPrefix}/cattle/mashona/mashona-female.jpg`;
 
 // Goats
-import boerKid from "assets/images/animals/goats/boer/boer-kid.jpg";
-import boerMale from "assets/images/animals/goats/boer/boer-male.jpg";
-import boerFemale from "assets/images/animals/goats/boer/boer-female.jpg";
+const boerKid = `${imagesPrefix}/goats/boer/boer-kid.jpg`;
+const boerMale = `${imagesPrefix}/goats/boer/boer-male.jpg`;
+const boerFemale = `${imagesPrefix}/goats/boer/boer-female.jpg`;
 
-import kalahariRedFemale from "assets/images/animals/goats/kalahari-red/kalahari-red-female.jpg";
-import kalahariRedMale from "assets/images/animals/goats/kalahari-red/kalahari-red-male.jpg";
-import kalahariRedKid from "assets/images/animals/goats/kalahari-red/kalahari-red-kid.jpg";
+const kalahariRedFemale = `${imagesPrefix}/goats/kalahari-red/kalahari-red-female.jpg`;
+const kalahariRedMale = `${imagesPrefix}/goats/kalahari-red/kalahari-red-male.jpg`;
+const kalahariRedKid = `${imagesPrefix}/goats/kalahari-red/kalahari-red-kid.jpg`;
 
-import mashonaGoatFemale from "assets/images/animals/goats/mashona/mashona-goat.jpg";
+const mashonaGoatFemale = `${imagesPrefix}/goats/mashona/mashona-goat.jpg`;
 
-import saanenFemale from "assets/images/animals/goats/saanen/saanen-female.jpg";
-import saanenMale from "assets/images/animals/goats/saanen/saanen-male.jpg";
-import saanenKid from "assets/images/animals/goats/saanen/saanen-kid.jpg";
+const saanenFemale = `${imagesPrefix}/goats/saanen/saanen-female.jpg`;
+const saanenMale = `${imagesPrefix}/goats/saanen/saanen-male.jpg`;
+const saanenKid = `${imagesPrefix}/goats/saanen/saanen-kid.jpg`;
 
-import toggenburgKid from "assets/images/animals/goats/toggenburg/toggenburg-kid.jpg";
-import toggenburgMale from "assets/images/animals/goats/toggenburg/toggenburg-male.jpg";
-import toggenburgFemale from "assets/images/animals/goats/toggenburg/toggenburg-female.jpg";
+const toggenburgKid = `${imagesPrefix}/goats/toggenburg/toggenburg-kid.jpg`;
+const toggenburgMale = `${imagesPrefix}/goats/toggenburg/toggenburg-male.jpg`;
+const toggenburgFemale = `${imagesPrefix}/goats/toggenburg/toggenburg-female.jpg`;
 
 // Pigs
-import durocPiglet from "assets/images/animals/pigs/duroc/duroc-piglet.jpg";
-import durocFemale from "assets/images/animals/pigs/duroc/duroc-female.jpg";
+const durocPiglet = `${imagesPrefix}/pigs/duroc/duroc-piglet.jpg`;
+const durocFemale = `${imagesPrefix}/pigs/duroc/duroc-female.jpg`;
 
-import hampshirePiglet from "assets/images/animals/pigs/hampshire/hampshire-piglet.jpg";
-import hampshireFemale from "assets/images/animals/pigs/hampshire/hampshire-female.jpg";
-import hampshireMale from "assets/images/animals/pigs/hampshire/hampshire-male.jpg";
+const hampshirePiglet = `${imagesPrefix}/pigs/hampshire/hampshire-piglet.jpg`;
+const hampshireFemale = `${imagesPrefix}/pigs/hampshire/hampshire-female.jpg`;
+const hampshireMale = `${imagesPrefix}/pigs/hampshire/hampshire-male.jpg`;
 
-import landracePiglet from "assets/images/animals/pigs/landrace/landrace-piglet.jpg";
-import landraceMale from "assets/images/animals/pigs/landrace/landrace-male.jpg";
-import landraceFemale from "assets/images/animals/pigs/landrace/landrace-female.jpg";
+const landracePiglet = `${imagesPrefix}/pigs/landrace/landrace-piglet.jpg`;
+const landraceMale = `${imagesPrefix}/pigs/landrace/landrace-male.jpg`;
+const landraceFemale = `${imagesPrefix}/pigs/landrace/landrace-female.jpg`;
 
-import largeWhiteFemale from "assets/images/animals/pigs/large-white/large-white-female.jpg";
-import largeWhitePiglet from "assets/images/animals/pigs/large-white/large-white-piglet.jpg";
-import largeWhiteMale from "assets/images/animals/pigs/large-white/large-white-male.jpg";
+const largeWhiteFemale = `${imagesPrefix}/pigs/large-white/large-white-female.jpg`;
+const largeWhitePiglet = `${imagesPrefix}/pigs/large-white/large-white-piglet.jpg`;
+const largeWhiteMale = `${imagesPrefix}/pigs/large-white/large-white-male.jpg`;
 
-import pietrainFemale from "assets/images/animals/pigs/pietrain/pietrain-female.jpg";
-import pietrainMale from "assets/images/animals/pigs/pietrain/pietrain-male.jpg";
-import pietrainPiglet from "assets/images/animals/pigs/pietrain/pietrain-piglet.jpg";
+const pietrainFemale = `${imagesPrefix}/pigs/pietrain/pietrain-female.jpg`;
+const pietrainMale = `${imagesPrefix}/pigs/pietrain/pietrain-male.jpg`;
+const pietrainPiglet = `${imagesPrefix}/pigs/pietrain/pietrain-piglet.jpg`;
 
 export default [
   {
@@ -243,7 +243,7 @@ export default [
   },
   {
     title: "Goat Breeds",
-    description: "50+ goat breeds to chose in any ratio of choice from kids to adult goats.",
+    description: "50+ goat breeds to chose in any ratio of choice = kids to adult goats.",
     items: [
       {
         image: `${boerKid}`,
@@ -297,7 +297,7 @@ export default [
       },
       {
         image: `${toggenburgMale}`,
-        name: "Toggenburg Female",
+        name: "Toggenburg Male",
         count: 6,
       },
       {

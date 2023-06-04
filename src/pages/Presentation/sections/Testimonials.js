@@ -23,7 +23,7 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
 // Material Kit 2 React examples
-// import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
+import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
 
 // Images
 import appleLogo from "assets/images/logos/gray-logos/logo-apple.svg";
@@ -50,10 +50,10 @@ function Information() {
           </MKTypography>
           <MKTypography variant="body1" color="text" mb={2}>
             Many farmers, companies, startups, universities and governmental institutions love our
-            products.
+            product.
           </MKTypography>
         </Grid>
-        {/* <Grid container spacing={3} sx={{ mt: 8 }}>
+        <Grid container spacing={3} sx={{ mt: 8 }}>
           <Grid item xs={12} md={6} lg={4}>
             <DefaultReviewCard
               name="Nick Willever"
@@ -79,7 +79,7 @@ function Information() {
               rating={5}
             />
           </Grid>
-        </Grid> */}
+        </Grid>
         <Divider sx={{ my: 6 }} />
         <Grid container spacing={3} justifyContent="center">
           <Grid item xs={6} md={4} lg={2}>

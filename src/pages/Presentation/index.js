@@ -28,6 +28,8 @@ import MKSocialButton from "components/MKSocialButton";
 // Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
+// import SimpleFooter from "examples/Footers/SimpleFooter";
+// import CenteredFooter from "examples/Footers/CenteredFooter";
 import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 
 // Presentation page sections
@@ -173,7 +175,7 @@ function Presentation() {
                   Thank you for your support!
                 </MKTypography>
                 <MKTypography variant="body1" color="text">
-                  We deliver the best web products
+                  Our goal is to deliver you the best products
                 </MKTypography>
               </Grid>
               <Grid
