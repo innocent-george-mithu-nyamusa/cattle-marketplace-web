@@ -57,7 +57,7 @@ function Presentation() {
         routes={routes}
         action={{
           type: "internal",
-          route: "",
+          route: "/login",
           label: "login",
           color: "secondary",
         }}

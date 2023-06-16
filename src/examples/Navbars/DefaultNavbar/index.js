@@ -487,39 +487,34 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           >
             {renderNavbarItems}
           </MKBox>
-          <MKBox ml={{ xs: "auto", lg: 0 }}>
+          <MKBox display="flex" justifyContent="space-between" ml={{ xs: "auto", lg: 0 }}>
+            <MKButton
+              component="a"
+              to="/sign-up"
+              variant="text"
+              color="primary"
+              target="_blank"
+              rel="noreferrer"
+              size="medium"
+              m={1.5}
+            >
+              Sign up
+            </MKButton>
             {action &&
               (action.type === "internal" ? (
-                ((
-                  <MKButton
-                    component={Link}
-                    to={action.route}
-                    variant={
-                      action.color === "white" || action.color === "default"
-                        ? "contained"
-                        : "gradient"
-                    }
-                    color={action.color ? action.color : "info"}
-                    size="small"
-                  >
-                    {action.label}
-                  </MKButton>
-                ),
-                (
-                  <MKButton
-                    component={Link}
-                    to={action.route}
-                    variant={
-                      action.color === "white" || action.color === "default"
-                        ? "contained"
-                        : "gradient"
-                    }
-                    color={action.color ? action.color : "info"}
-                    size="small"
-                  >
-                    {action.label}
-                  </MKButton>
-                ))
+                <MKButton
+                  component={Link}
+                  to={action.route}
+                  variant={
+                    action.color === "white" || action.color === "default"
+                      ? "contained"
+                      : "gradient"
+                  }
+                  color={action.color ? action.color : "info"}
+                  size="medium"
+                >
+                  {action.label}
+                </MKButton>
               ) : (
                 <MKButton
                   component="a"

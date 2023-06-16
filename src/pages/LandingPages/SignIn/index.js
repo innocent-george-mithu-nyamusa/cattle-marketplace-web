@@ -40,7 +40,7 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import SimpleFooter from "examples/Footers/SimpleFooter";
 
 // Material Kit 2 React page layout routes
-import routes from "routes";
+import routes from "routes.prod";
 
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
@@ -50,14 +50,18 @@ function SignInBasic() {
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
+  const handleFormSubmussion = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <DefaultNavbar
         routes={routes}
         action={{
           type: "external",
-          route: "https://www.creative-tim.com/product/material-kit-react",
-          label: "free download",
+          route: "https://livestock-marketplace.co.zw/",
+          label: "Download Apps",
           color: "info",
         }}
         transparent
@@ -138,7 +142,13 @@ function SignInBasic() {
                     </MKTypography>
                   </MKBox>
                   <MKBox mt={4} mb={1}>
-                    <MKButton variant="gradient" color="info" fullWidth>
+                    <MKButton
+                      type="submit"
+                      variant="gradient"
+                      color="info"
+                      onClick={handleFormSubmussion}
+                      fullWidth
+                    >
                       sign in
                     </MKButton>
                   </MKBox>
