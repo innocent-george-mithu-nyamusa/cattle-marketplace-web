@@ -23,6 +23,7 @@ import Card from "@mui/material/Card";
 import Switch from "@mui/material/Switch";
 import Grid from "@mui/material/Grid";
 import MuiLink from "@mui/material/Link";
+import CircularProgress from "@mui/material/CircularProgress";
 
 // @mui icons
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -44,14 +45,30 @@ import routes from "routes.prod";
 
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
+import validateEmail from "utils/functions";
 
 function SignInBasic() {
   const [rememberMe, setRememberMe] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({ email: "", password: "" });
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
-  const handleFormSubmussion = (e) => {
+  const formHandler = (fieldName, e) => {
+    setForm({ ...form, [fieldName]: e.target.value });
+  };
+
+  const handleFormSubmission = (e) => {
     e.preventDefault();
+    setLoading(true);
+
+    if (!validateEmail(form.email)) {
+      setLoading(false);
+      Object.assign(document.getElementById("emailInput"), {
+        error: "error",
+        helperText: "invalid password entered",
+      });
+    }
   };
 
   return (
@@ -101,7 +118,7 @@ function SignInBasic() {
                 textAlign="center"
               >
                 <MKTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-                  Sign in
+                  Sign into your account
                 </MKTypography>
                 <Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
                   <Grid item xs={2}>
@@ -122,12 +139,24 @@ function SignInBasic() {
                 </Grid>
               </MKBox>
               <MKBox pt={4} pb={3} px={3}>
-                <MKBox component="form" role="form">
+                <MKBox component="form" onSubmit={handleFormSubmission} role="form">
                   <MKBox mb={2}>
-                    <MKInput type="email" label="Email" fullWidth />
+                    <MKInput
+                      type="email"
+                      label="Email"
+                      id="emailInput"
+                      onChange={(e) => formHandler("email", e)}
+                      fullWidth
+                    />
                   </MKBox>
                   <MKBox mb={2}>
-                    <MKInput type="password" label="Password" fullWidth />
+                    <MKInput
+                      type="password"
+                      label="Password"
+                      id="passwordInput"
+                      onChange={(e) => formHandler("password", e)}
+                      fullWidth
+                    />
                   </MKBox>
                   <MKBox display="flex" alignItems="center" ml={-1}>
                     <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -141,16 +170,14 @@ function SignInBasic() {
                       &nbsp;&nbsp;Remember me
                     </MKTypography>
                   </MKBox>
-                  <MKBox mt={4} mb={1}>
-                    <MKButton
-                      type="submit"
-                      variant="gradient"
-                      color="info"
-                      onClick={handleFormSubmussion}
-                      fullWidth
-                    >
-                      sign in
-                    </MKButton>
+                  <MKBox mt={4} mb={1} display="flex" alignItems="center">
+                    {loading ? (
+                      <CircularProgress color="info" />
+                    ) : (
+                      <MKButton type="submit" variant="gradient" color="info" fullWidth>
+                        sign in
+                      </MKButton>
+                    )}
                   </MKBox>
                   <MKBox mt={3} mb={1} textAlign="center">
                     <MKTypography variant="button" color="text">
