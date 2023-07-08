@@ -28,7 +28,7 @@ Coded by www.creative-tim.com
   4. The `route` key is used to store the route location which is used for the react router.
   5. The `href` key is used to store the external links location.
   6. The `component` key is used to store the component of its route.
-  7. The `dropdown` key is used to define that the item should open a dropdown for its collapse items .
+  7. The `dropdown` key is used to define that the item should open a dropdown for its collapse items.
   8. The `description` key is used to define the description of
           a route under its name.
   9. The `columns` key is used to define that how the content should look inside the dropdown menu as columns,
