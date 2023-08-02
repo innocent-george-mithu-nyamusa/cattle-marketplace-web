@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 import { useState } from "react";
 
 // react-router-dom components
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -34,6 +34,7 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
+import MKAlert from "components/MKAlert";
 
 // Material Kit 2 React example components
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
@@ -44,7 +45,7 @@ import routes from "routes.prod";
 
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
-import validateEmail from "utils/functions";
+import validateEmail, { customErrorMessage } from "utils/functions";
 
 import { auth } from "config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -52,7 +53,11 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 function SignInBasic() {
   const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showAlert, setAlert] = useState(false);
+  const [message, setMessage] = useState("");
   const [form, setForm] = useState({ email: "", password: "" });
+
+  const navigate = useNavigate();
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
@@ -72,7 +77,16 @@ function SignInBasic() {
       });
     }
 
-    await signInWithEmailAndPassword(auth, form.email, form.password);
+    signInWithEmailAndPassword(auth, form.email, form.password)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        setLoading(false);
+        const errorMessage = customErrorMessage(error.code);
+        setMessage(errorMessage);
+        setAlert(true);
+      });
   };
 
   return (
@@ -169,6 +183,13 @@ function SignInBasic() {
                       &nbsp;&nbsp;Remember me
                     </MKTypography>
                   </MKBox>
+                  {showAlert ? (
+                    <MKAlert color="error" dismissible>
+                      {message}
+                    </MKAlert>
+                  ) : (
+                    <MKBox></MKBox>
+                  )}
                   <MKBox mt={4} mb={1} display="flex" justifyContent="center" alignItems="center">
                     {loading ? (
                       <CircularProgress color="info" />
@@ -183,7 +204,7 @@ function SignInBasic() {
                       Don&apos;t have an account?{" "}
                       <MKTypography
                         component={Link}
-                        to="/authentication/sign-up/cover"
+                        to="/sign-up"
                         variant="button"
                         color="info"
                         fontWeight="medium"

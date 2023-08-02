@@ -1,7 +1,13 @@
 import { useState } from "react";
 
 // react-router-dom components
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+//database
+import { auth } from "config/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { setDoc } from "firebase/firestore";
+import { setUserDoc } from "services/collectionService";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -13,12 +19,14 @@ import CircularProgress from "@mui/material/CircularProgress";
 // @mui icons
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
+import MKAlert from "components/MKAlert";
 
 // Material Kit 2 React example components
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
@@ -29,15 +37,21 @@ import routes from "routes.prod";
 
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
-import validateEmail from "utils/functions";
-
-import { auth } from "config/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import validateEmail, { customErrorMessage } from "utils/functions";
 
 function SignUpBasic() {
   const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({ email: "", password: "" });
+  const [showAlert, setAlert] = useState(false);
+  const [message, setMessage] = useState("");
+  const [form, setForm] = useState({
+    firstname: "",
+    lastname: "",
+    phone: "",
+    email: "",
+    password: "",
+  });
+  const navigate = useNavigate();
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
@@ -57,7 +71,40 @@ function SignUpBasic() {
       });
     }
 
-    await createUserWithEmailAndPassword(auth, form.email, form.password);
+    createUserWithEmailAndPassword(auth, form.email, form.password)
+      .then((userData) => {
+        // const user = userCred.user;
+        console.log("this is auth user creds");
+        console.log(userData);
+      })
+      .catch((error) => {
+        setLoading(false);
+        const errorMessage = customErrorMessage(error.code);
+        setMessage(errorMessage);
+        setAlert(true);
+      });
+
+    console.log("added user auth adata");
+
+    setDoc(setUserDoc(form.email), {
+      firstname: form.firstname,
+      lastname: form.lastname,
+      phone: form.phone,
+      email: form.email,
+    })
+      .then((user) => {
+        console.log(user);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+
+        setMessage("Retry to register. An error occured during registration.");
+        setAlert(true);
+        setLoading(false);
+      });
+
+    navigate("/");
   };
 
   return (
@@ -117,6 +164,11 @@ function SignUpBasic() {
                   </Grid>
                   <Grid item xs={2}>
                     <MKTypography component={MuiLink} href="#" variant="body1" color="white">
+                      <LocalPhoneIcon color="inherit" />
+                    </MKTypography>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <MKTypography component={MuiLink} href="#" variant="body1" color="white">
                       <GoogleIcon color="inherit" />
                     </MKTypography>
                   </Grid>
@@ -124,7 +176,34 @@ function SignUpBasic() {
               </MKBox>
               <MKBox pt={4} pb={3} px={3}>
                 <MKBox component="form" onSubmit={handleFormSubmission} role="form">
-                  <MKBox mb={2}>
+                  <MKBox mb={1}>
+                    <MKInput
+                      type="text"
+                      label="Firstname"
+                      id="firstname"
+                      onChange={(e) => formHandler("firstname", e)}
+                      fullWidth
+                    />
+                  </MKBox>
+                  <MKBox mb={1}>
+                    <MKInput
+                      type="text"
+                      label="Lastname"
+                      id="lastnameInput"
+                      onChange={(e) => formHandler("lastname", e)}
+                      fullWidth
+                    />
+                  </MKBox>
+                  <MKBox mb={1}>
+                    <MKInput
+                      type="phone"
+                      label="Phone"
+                      id="phoneInput"
+                      onChange={(e) => formHandler("phone", e)}
+                      fullWidth
+                    />
+                  </MKBox>
+                  <MKBox mb={1}>
                     <MKInput
                       type="email"
                       label="Email"
@@ -133,7 +212,7 @@ function SignUpBasic() {
                       fullWidth
                     />
                   </MKBox>
-                  <MKBox mb={2}>
+                  <MKBox mb={1}>
                     <MKInput
                       type="password"
                       label="Password"
@@ -154,16 +233,25 @@ function SignUpBasic() {
                       &nbsp;&nbsp;Remember me
                     </MKTypography>
                   </MKBox>
-                  <MKBox mt={4} mb={1} display="flex" justifyContent="center" alignItems="center">
+
+                  {showAlert ? (
+                    <MKAlert color="error" dismissible>
+                      {message}
+                    </MKAlert>
+                  ) : (
+                    <MKBox></MKBox>
+                  )}
+
+                  <MKBox mt={2} mb={1} display="flex" justifyContent="center" alignItems="center">
                     {loading ? (
                       <CircularProgress color="info" />
                     ) : (
                       <MKButton type="submit" variant="gradient" color="info" fullWidth>
-                        sign in
+                        sign up
                       </MKButton>
                     )}
                   </MKBox>
-                  <MKBox mt={3} mb={1} textAlign="center">
+                  <MKBox mt={2} mb={1} textAlign="center">
                     <MKTypography variant="button" color="text">
                       Already have an account?{" "}
                       <MKTypography
