@@ -28,3 +28,18 @@ export const customErrorMessage = (errorCode) => {
 
   return message;
 };
+
+export const customAnimalData = {
+  cattle: {
+    stages: ["calf", "heifer", "bull", "cow"],
+  },
+  pigs: {
+    stages: ["piglet", "gilt", "boar", "sow"],
+  },
+  goats: {
+    stages: ["kid", "buckling", "buck", "doeling", "doe"],
+  },
+  sheep: {
+    stages: ["ewe lamb", "ewe", "ram"],
+  },
+};

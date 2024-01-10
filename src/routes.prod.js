@@ -44,6 +44,7 @@ import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 // import Author from "layouts/pages/landing-pages/author";
 // import SignIn from "layouts/pages/authentication/sign-in";
+
 import Homepage from "layouts/pages/homepage";
 
 const routes = [
@@ -59,32 +60,37 @@ const routes = [
           {
             name: "mashona",
             route: "/livestock/cattle/mashona",
-            component: <Homepage />,
+            component: Homepage,
+            properties: { animalType: "cattle", animalBreed: "mashona", animalName: "cattle" },
           },
-          {
-            name: "brahman",
-            route: "/livestock/cattle/brahman",
-            component: <Homepage />,
-          },
+          // {
+          //   name: "brahman",
+          //   route: "/livestock/cattle/brahman",
+          //   component: <Homepage animalType="cattle" animalBreed="brahman" animalName="cattle" />,
+          // },
           {
             name: "hereford",
             route: "/livestock/cattle/hereford",
-            component: <Homepage />,
+            component: Homepage,
+            properties: { animalType: "cattle", animalBreed: "hereford", animalName: "cattle" },
           },
           {
             name: "simmental",
             route: "/livestock/cattle/simmental",
-            component: <Homepage />,
+            component: Homepage,
+            properties: { animalType: "cattle", animalBreed: "simmental", animalName: "cattle" },
           },
           {
             name: "aberdeen-angus",
             route: "/livestock/cattle/arbedeen-angus",
-            component: <Homepage />,
+            component: Homepage,
+            properties: { animalType: "cattle", animalBreed: "arbedeen", animalName: "cattle" },
           },
           {
             name: "charolais",
-            route: "/livestock/cattle/arbedeen-angus",
-            component: <Homepage />,
+            route: "/livestock/cattle/charolais",
+            component: Homepage,
+            properties: { animalType: "cattle", animalBreed: "charolais", animalName: "cattle" },
           },
         ],
       },
@@ -94,17 +100,20 @@ const routes = [
           {
             name: "sheep",
             route: "/livestock/cattle/sheep",
-            component: <Homepage />,
+            component: Homepage,
+            properties: { animalType: "sheep", animalBreed: "sheep", animalName: "sheep" },
           },
           {
             name: "goats",
             route: "/livestock/cattle/goats",
-            component: <Homepage />,
+            component: Homepage,
+            properties: { animalType: "goats", animalBreed: "goats", animalName: "goats" },
           },
           {
             name: "pigs",
             route: "/livestock/cattle/pigs",
-            component: <Homepage />,
+            component: Homepage,
+            properties: { animalType: "pigs", animalBreed: "pigs", animalName: "pigs" },
           },
         ],
       },
@@ -149,12 +158,12 @@ const routes = [
           {
             name: "about us",
             route: "/pages/landing-pages/about-us",
-            component: <AboutUs />,
+            component: AboutUs,
           },
           {
             name: "contact us",
             route: "/pages/landing-pages/contact-us",
-            component: <ContactUs />,
+            component: ContactUs,
           },
         ],
       },

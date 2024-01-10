@@ -1,11 +1,7 @@
-import MKTypography from "components/MKTypography";
+import AnimalsHomepage from "pages/LandingPages/Homepage";
 
-function Homepage() {
-  return (
-    <MKTypography variant="button" fontWeight="bold" color={"dark"}>
-      Welcome to homepage
-    </MKTypography>
-  );
-}
+const Homepage = (props) => {
+  return <AnimalsHomepage {...props} />;
+};
 
 export default Homepage;

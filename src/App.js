@@ -10,8 +10,10 @@ import CssBaseline from "@mui/material/CssBaseline";
 // Material Kit 2 React themes
 import theme from "assets/theme";
 import Presentation from "layouts/pages/presentation";
-
-import routes from "routes";
+import Homepage from "layouts/pages/homepage";
+import SignIn from "login";
+import SignUp from "sign-up";
+import routes from "routes.prod";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -27,10 +29,17 @@ export default function App() {
       if (route.collapse) {
         return getRoutes(route.collapse);
       }
-      console.log(route.route);
 
       if (route.route) {
-        return <Route exact path={route.route} element={route.component} key={route.key} />;
+        const item = (
+          <Route
+            exact
+            path={route.route}
+            element={<route.component {...route.properties} />}
+            key={route.key}
+          />
+        );
+        return item;
       }
 
       return null;
@@ -43,6 +52,12 @@ export default function App() {
       <Routes>
         {getRoutes(routes)}
 
+        <Route
+          path="/livestock/cattle/brahman"
+          element={<Homepage animalType="cattle" animalBreed="mashona" animalName="cattle" />}
+        />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/login" element={<SignIn />} />
         <Route path="/" element={<Presentation />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
