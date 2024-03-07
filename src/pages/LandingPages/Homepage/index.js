@@ -269,7 +269,13 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                   <Button>Add to cart </Button>
                 </CardActions>
               </Card>
-              <Card sx={{ maxWidth: "31%", borderRadius: "10px", height: "fit-content"  }}>
+              <Card
+                sx={{
+                  maxWidth: "31%",
+                  borderRadius: "10px",
+                  height: "fit-content",
+                }}
+              >
                 <CardHeader
                   avatar={
                     <Stack direction="row" spacing={2}>
