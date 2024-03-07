@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth } from "config/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { setDoc } from "firebase/firestore";
-import { setUserDoc } from "services/collectionService";
+import { setUserDoc } from "services/animalService";
 
 // @mui material components
 import Card from "@mui/material/Card";

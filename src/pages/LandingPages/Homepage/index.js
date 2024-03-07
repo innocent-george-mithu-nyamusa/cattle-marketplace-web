@@ -32,7 +32,6 @@ import MKInput from "components/MKInput";
 import logoCT from "assets/images/logo.png";
 // TODO:: DELETE THIS LATER
 import cow from "assets/images/animals/cattle/angus/arbedeen-angus-male.jpg";
-import { getAllAnimalType } from "services/collectionService";
 
 function AnimalsHomepage({ animalType, animalBreed, animalName }) {
   const [filters, setFilters] = useState({
@@ -48,7 +47,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
 
   useEffect(() => {
     async function fetchData() {
-      const data = await getAllAnimalType(filters.name);
+      const data = [];
       setAnimalData(data);
     }
 
