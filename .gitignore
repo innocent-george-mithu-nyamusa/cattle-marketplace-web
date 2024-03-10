@@ -23,6 +23,5 @@ yarn-error.log*
 
 yarn.lock
 
-firebase.js
 
 commit.sh
