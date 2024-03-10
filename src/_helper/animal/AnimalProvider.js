@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Context from "./index";
-import { listAnimal } from "../services/animalService";
+import { getAllListedAnimals } from "../../services/animalService";
+import PropTypes from "prop-types";
 
 const AnimalProvider = (props) => {
   const [allAnimals, setAllAnimals] = useState([]);
   const [selectedAnimal, setSelectedAnimal] = useState({});
 
+  console.log(selectedAnimal);
+
   const handleListAnimal = (animalID, otherData) => {
     const enListAnimal = async (id, animalData) => {
       try {
-        await listAnimal(id, animalData);
+        await getAllListedAnimals(id, animalData);
       } catch (error) {
         console.log(error);
       }
@@ -26,11 +29,16 @@ const AnimalProvider = (props) => {
         ...props,
         allAnimals,
         selectedAnimal,
+        setSelectedAnimal,
         handleListAnimal,
       }}
     >
       {props.children}
     </Context.Provider>
   );
+};
+
+AnimalProvider.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.element], PropTypes.element),
 };
 export default AnimalProvider;

@@ -1,4 +1,4 @@
-import { collection, getDocs, doc } from "firebase/firestore";
+import { collection, getDocs, doc, query, where } from "firebase/firestore";
 import { db } from "../config/firebase";
 
 const animalsCollection = collection(db, "animals");
@@ -6,6 +6,21 @@ export const UserCollectionService = collection(db, "users");
 
 export function setUserDoc(email) {
   return doc(db, "users", email.toString());
+}
+
+export async function getAllListedAnimals() {
+  try {
+    const listedAnimalsCollection = query(
+      collection(db, "animals"),
+      where("status", "==", "listed")
+    );
+    const listedAnimalsSnapshot = await getDocs(listedAnimalsCollection);
+    const listAnimals = listedAnimalsSnapshot.docs.map((doc) => doc.data());
+    return listAnimals;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 }
 
 export async function getAllAnimals() {
