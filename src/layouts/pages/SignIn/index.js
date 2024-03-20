@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState } from "react";
 
 // react-router-dom components
@@ -47,9 +32,6 @@ import routes from "routes.prod";
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 import validateEmail, { customErrorMessage } from "utils/functions";
 
-import { auth } from "config/firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
-
 function SignInBasic() {
   const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -77,16 +59,10 @@ function SignInBasic() {
       });
     }
 
-    signInWithEmailAndPassword(auth, form.email, form.password)
-      .then(() => {
-        navigate("/");
-      })
-      .catch((error) => {
-        setLoading(false);
-        const errorMessage = customErrorMessage(error.code);
-        setMessage(errorMessage);
-        setAlert(true);
-      });
+    setLoading(false);
+    const errorMessage = customErrorMessage(error.code);
+    setMessage(errorMessage);
+    setAlert(true);
   };
 
   return (
