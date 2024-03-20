@@ -42,8 +42,6 @@ import Icon from "@mui/material/Icon";
 // Pages
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
-// import Author from "layouts/pages/landing-pages/author";
-// import SignIn from "layouts/pages/authentication/sign-in";
 
 import Homepage from "layouts/pages/homepage";
 

@@ -42,6 +42,7 @@ function SignInBasic() {
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
   const formHandler = (fieldName, e) => {
+    
     setForm({ ...form, [fieldName]: e.target.value });
   };
 
@@ -113,11 +114,6 @@ function SignInBasic() {
                   Sign into your account
                 </MKTypography>
                 <Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
-                  <Grid item xs={2}>
-                    <MKTypography component={MuiLink} href="#" variant="body1" color="white">
-                      <FacebookIcon color="inherit" />
-                    </MKTypography>
-                  </Grid>
                   <Grid item xs={2}>
                     <MKTypography component={MuiLink} href="#" variant="body1" color="white">
                       <GoogleIcon color="inherit" />
