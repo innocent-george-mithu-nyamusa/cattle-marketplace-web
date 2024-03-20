@@ -1,6 +1,6 @@
 /*
 =========================================================
-* Material Kit 2 React - v2.1.0
+* - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-kit-react
@@ -19,13 +19,13 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Stack from "@mui/material/Stack";
 
-// Material Kit 2 React components
+// components
 import MKBox from "components/MKBox";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 import MKSocialButton from "components/MKSocialButton";
 
-// Material Kit 2 React examples
+// examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 // import SimpleFooter from "examples/Footers/SimpleFooter";

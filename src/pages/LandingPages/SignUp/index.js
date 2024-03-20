@@ -21,18 +21,18 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 
-// Material Kit 2 React components
+// components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKAlert from "components/MKAlert";
 
-// Material Kit 2 React example components
+// example components
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import SimpleFooter from "examples/Footers/SimpleFooter";
 
-// Material Kit 2 React page layout routes
+// page layout routes
 import routes from "routes.prod";
 
 // Images

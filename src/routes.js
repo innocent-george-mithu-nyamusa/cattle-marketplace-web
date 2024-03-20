@@ -8,8 +8,6 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 import Author from "layouts/pages/landing-pages/author";
-import SignIn from "login";
-import SignUp from "sign-up";
 
 // Sections
 import PageHeaders from "layouts/sections/page-sections/page-headers";
@@ -55,26 +53,6 @@ const routes = [
             name: "author",
             route: "/pages/landing-pages/author",
             component: <Author />,
-          },
-        ],
-      },
-      {
-        name: "account",
-        collapse: [
-          {
-            name: "sign in",
-            route: "/login",
-            component: <SignIn />,
-          },
-        ],
-      },
-      {
-        name: "sign ",
-        collapse: [
-          {
-            name: "sign up",
-            route: "/sign-up",
-            component: <SignUp />,
           },
         ],
       },

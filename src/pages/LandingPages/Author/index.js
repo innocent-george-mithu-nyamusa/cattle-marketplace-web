@@ -1,6 +1,6 @@
 /*
 =========================================================
-* Material Kit 2 React - v2.1.0
+* - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-kit-react
@@ -16,10 +16,10 @@ Coded by www.creative-tim.com
 // @mui material components
 import Card from "@mui/material/Card";
 
-// Material Kit 2 React components
+// components
 import MKBox from "components/MKBox";
 
-// Material Kit 2 React examples
+// examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 
 // Author page sections

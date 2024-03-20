@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // react-router-dom components
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -14,18 +14,18 @@ import CircularProgress from "@mui/material/CircularProgress";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 
-// Material Kit 2 React components
+// components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKAlert from "components/MKAlert";
 
-// Material Kit 2 React example components
+// example components
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import SimpleFooter from "examples/Footers/SimpleFooter";
 
-// Material Kit 2 React page layout routes
+// routes
 import routes from "routes.prod";
 
 // Images
@@ -38,8 +38,6 @@ function SignInBasic() {
   const [showAlert, setAlert] = useState(false);
   const [message, setMessage] = useState("");
   const [form, setForm] = useState({ email: "", password: "" });
-
-  const navigate = useNavigate();
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
@@ -60,7 +58,7 @@ function SignInBasic() {
     }
 
     setLoading(false);
-    const errorMessage = customErrorMessage(error.code);
+    const errorMessage = customErrorMessage("error.code");
     setMessage(errorMessage);
     setAlert(true);
   };

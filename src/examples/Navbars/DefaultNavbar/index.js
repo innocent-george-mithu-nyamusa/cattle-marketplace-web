@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 /**
 =========================================================
-* Material Kit 2 React - v2.1.0
+* - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-kit-react
@@ -31,16 +31,16 @@ import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import MuiLink from "@mui/material/Link";
 
-// Material Kit 2 React components
+// components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
-// Material Kit 2 React example components
+// example components
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMobile";
 
-// Material Kit 2 React base styles
+// base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
 function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
