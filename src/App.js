@@ -7,7 +7,7 @@ export default function App() {
   return (
     <Fragment>
       <AnimalProvider>
-        <BrowserRouter>
+        <BrowserRouter> 
           <AppRouter />
         </BrowserRouter>
       </AnimalProvider>
