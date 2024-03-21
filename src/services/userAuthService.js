@@ -9,24 +9,29 @@ export const signInUser = async (form) => {
     // ... add more error codes and messages
   };
 
-  return await signInWithEmailAndPassword(auth, form.email, form.password)
-    .then((userCredential) => {
-      let user = userCredential.user;
-      console.log(user);
-      const email = user.email;
-      return { success: true, email };
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
+  try {
+    return await signInWithEmailAndPassword(auth, form.email, form.password)
+      .then((userCredential) => {
+        let user = userCredential.user;
+        console.log(user);
+        const email = user.email;
+        return { success: true, email };
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
 
-      // Check if you have a custom message
-      if (customErrorMessages[errorCode]) {
-        errorMessage = customErrorMessages[errorCode];
-      }
+        // Check if you have a custom message
+        if (customErrorMessages[errorCode]) {
+          errorMessage = customErrorMessages[errorCode];
+        }
 
-      return { error: errorMessage, code: errorCode, success: false };
-    });
+        return { error: errorMessage, code: errorCode, success: false };
+      });
+  } catch (er) {
+    console.error("Error signing in:", er);
+    return { error: "Unexpected error", code: "unknown", success: false };
+  }
 };

@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 // react-router-dom components
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { useForm } from "react-hook-form";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -10,8 +12,8 @@ import Grid from "@mui/material/Grid";
 import MuiLink from "@mui/material/Link";
 import CircularProgress from "@mui/material/CircularProgress";
 
+import UserContext from "_helper/Users";
 // @mui icons
-import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 
 // components
@@ -30,38 +32,35 @@ import routes from "routes.prod";
 
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
-import validateEmail, { customErrorMessage } from "utils/functions";
 
 function SignInBasic() {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const { loginUser } = useContext(UserContext);
   const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showAlert, setAlert] = useState(false);
   const [message, setMessage] = useState("");
-  const [form, setForm] = useState({ email: "", password: "" });
 
+  const navigate = useNavigate();
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
-  const formHandler = (fieldName, e) => {
-    
-    setForm({ ...form, [fieldName]: e.target.value });
-  };
-
-  const handleFormSubmission = async (e) => {
-    e.preventDefault();
+  const handleFormSubmission = async (formData) => {
     setLoading(true);
-
-    if (!validateEmail(form.email)) {
-      setLoading(false);
-      Object.assign(document.getElementById("emailInput"), {
-        error: "error",
-        helperText: "invalid password entered",
-      });
-    }
-
+    const result = await loginUser(formData);
     setLoading(false);
-    const errorMessage = customErrorMessage("error.code");
-    setMessage(errorMessage);
-    setAlert(true);
+    reset();
+
+    if (result.sucess == true) {
+      navigate("/");
+    } else {
+      setMessage(result.error);
+      setAlert(true);
+    }
   };
 
   return (
@@ -122,14 +121,14 @@ function SignInBasic() {
                 </Grid>
               </MKBox>
               <MKBox pt={4} pb={3} px={3}>
-                <MKBox component="form" onSubmit={handleFormSubmission} role="form">
+                <MKBox component="form" onSubmit={handleSubmit(handleFormSubmission)} role="form">
                   <MKBox mb={2}>
                     <MKInput
                       type="email"
                       label="Email"
-                      id="emailInput"
-                      onChange={(e) => formHandler("email", e)}
                       fullWidth
+                      error={errors.email && true}
+                      {...register("email", { required: true, pattern: /\S+@\S+\.\S+/ })}
                     />
                   </MKBox>
                   <MKBox mb={2}>
@@ -137,7 +136,8 @@ function SignInBasic() {
                       type="password"
                       label="Password"
                       id="passwordInput"
-                      onChange={(e) => formHandler("password", e)}
+                      error={errors.password && true}
+                      {...register("password", { required: true, min: 8 })}
                       fullWidth
                     />
                   </MKBox>
