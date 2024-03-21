@@ -56,6 +56,7 @@ function SignUpBasic() {
   const handleFormSubmission = async (signUpFormData) => {
     setLoading(true);
     const result = await signUpUser(signUpFormData);
+    reset();
 
     if (result.success == true) {
       navigate("/");
@@ -63,6 +64,7 @@ function SignUpBasic() {
       setMessage(result.error);
       setAlert(true);
     }
+    setLoading(false);
   };
 
   return (
@@ -135,6 +137,7 @@ function SignUpBasic() {
                       label="Firstname"
                       id="firstname"
                       fullWidth
+                      error={errors.firstname && true}
                       {...register("firstname", { required: true })}
                     />
                   </MKBox>
@@ -153,6 +156,7 @@ function SignUpBasic() {
                       label="Phone"
                       id="phoneInput"
                       fullWidth
+                      error={errors.phone && true}
                       {...register("phone", { required: true })}
                     />
                   </MKBox>
@@ -162,6 +166,7 @@ function SignUpBasic() {
                       label="Email"
                       id="emailInput"
                       fullWidth
+                      error={errors.email && true}
                       {...register("email", { required: true, pattern: /\S+@\S+\.\S+/ })}
                     />
                   </MKBox>
@@ -170,6 +175,7 @@ function SignUpBasic() {
                       type="password"
                       label="Password"
                       id="passwordInput"
+                      error={errors.password && true}
                       {...register("password", {
                         required: true,
                         pattern:
