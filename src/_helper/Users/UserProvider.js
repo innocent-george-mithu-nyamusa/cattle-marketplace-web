@@ -13,11 +13,15 @@ const UserProvider = (props) => {
     let createUserAccountResult;
     createUserAccountResult = await SignUpUserAccount(signUpDetails);
 
+    console.log("sign up user response", createUserAccountResult);
+
     if (createUserAccountResult.success == false) {
-      return createUserAccount;
+      return createUserAccountResult;
     }
 
     createUserAccountResult = await createUserAccount(signUpDetails);
+
+    console.log("create user response", createUserAccountResult);
     return createUserAccount;
   };
 
