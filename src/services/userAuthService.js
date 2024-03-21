@@ -1,6 +1,6 @@
 import { auth } from "config/firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-import { setDoc, doc } from "firebase/firestore";
+import { setDoc, doc, collection } from "firebase/firestore";
 
 import { db } from "../config/firebase";
 
@@ -64,18 +64,16 @@ export const SignUpUserAccount = async (form) => {
         return { error: errorMessage, code: errorCode, success: false };
       });
   } catch (error) {
-    console.error("Error signing up:", er);
+    console.error("Error signing up:", error);
     return { error: "Unexpected error", code: "unknown", success: false };
   }
 };
 
-function setUserDoc(email) {
-  return doc(db, "users", email.toString());
-}
-
 export const createUserAccount = async (form) => {
   try {
-    return await setDoc(setUserDoc(form.email), {
+    const reference = doc(db, "users", form.email);
+
+    return await setDoc(reference, {
       firstname: form.firstname,
       lastname: form.lastname,
       phone: form.phone,
@@ -100,7 +98,7 @@ export const createUserAccount = async (form) => {
         return { error: errorMessage, code: errorCode, success: false };
       });
   } catch (error) {
-    console.error("Error signing up:", er);
+    console.error("Error adding details to firestore:", error);
     return { error: "Unexpected error", code: "unknown", success: false };
   }
 };
