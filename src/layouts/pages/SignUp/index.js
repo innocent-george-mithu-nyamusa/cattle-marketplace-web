@@ -56,9 +56,11 @@ function SignUpBasic() {
   const handleFormSubmission = async (signUpFormData) => {
     setLoading(true);
     const result = await signUpUser(signUpFormData);
+
+    console.log(result);
     reset();
 
-    if (result.success == true) {
+    if (result.success === true) {
       navigate("/");
     } else {
       setMessage(result.error);

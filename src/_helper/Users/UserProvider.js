@@ -13,16 +13,13 @@ const UserProvider = (props) => {
     let createUserAccountResult;
     createUserAccountResult = await SignUpUserAccount(signUpDetails);
 
-    console.log("sign up user response", createUserAccountResult);
-
     if (createUserAccountResult.success == false) {
       return createUserAccountResult;
     }
 
     createUserAccountResult = await createUserAccount(signUpDetails);
 
-    console.log("create user response", createUserAccountResult);
-    return createUserAccount;
+    return createUserAccountResult;
   };
 
   return <Context.Provider value={{ loginUser, signUpUser }}>{props.children}</Context.Provider>;
