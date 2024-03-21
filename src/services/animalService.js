@@ -30,7 +30,3 @@ export async function getAllAnimalType(animal = "cattle") {
   );
   return animalTypeList;
 }
-// export async function getAllAnimalWithFilter(animal='cattle', breed='', gender='') {
-
-//   return
-// }
