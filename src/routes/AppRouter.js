@@ -12,7 +12,7 @@ import theme from "assets/theme";
 import Presentation from "layouts/pages/presentation";
 import Homepage from "layouts/pages/homepage";
 import SignIn from "pages/SignIn";
-import SignUp from "sign-up";
+import SignUp from "pages/SignUp";
 import routes from "routes.prod";
 
 export default function AppRouter() {

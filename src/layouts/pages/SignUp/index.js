@@ -1,13 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 // react-router-dom components
 import { Link, useNavigate } from "react-router-dom";
-
-//database
-import { auth } from "config/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { setDoc } from "firebase/firestore";
-import { setUserDoc } from "services/animalService";
+import { useForm } from "react-hook-form";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -17,7 +12,6 @@ import MuiLink from "@mui/material/Link";
 import CircularProgress from "@mui/material/CircularProgress";
 
 // @mui icons
-import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 
@@ -28,6 +22,9 @@ import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKAlert from "components/MKAlert";
 
+//context import
+import UserContext from "_helper/Users";
+
 // example components
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import SimpleFooter from "examples/Footers/SimpleFooter";
@@ -37,74 +34,35 @@ import routes from "routes.prod";
 
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
-import validateEmail, { customErrorMessage } from "utils/functions";
 
 function SignUpBasic() {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const { signUpUser } = useContext(UserContext);
+
   const [rememberMe, setRememberMe] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showAlert, setAlert] = useState(false);
   const [message, setMessage] = useState("");
-  const [form, setForm] = useState({
-    firstname: "",
-    lastname: "",
-    phone: "",
-    email: "",
-    password: "",
-  });
   const navigate = useNavigate();
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
-  const formHandler = (fieldName, e) => {
-    setForm({ ...form, [fieldName]: e.target.value });
-  };
-
-  const handleFormSubmission = async (e) => {
-    e.preventDefault();
+  const handleFormSubmission = async (signUpFormData) => {
     setLoading(true);
+    const result = await signUpUser(signUpFormData);
 
-    if (!validateEmail(form.email)) {
-      setLoading(false);
-      Object.assign(document.getElementById("emailInput"), {
-        error: "error",
-        helperText: "invalid password entered",
-      });
+    if (result.success == true) {
+      navigate("/");
+    } else {
+      setMessage(result.error);
+      setAlert(true);
     }
-
-    createUserWithEmailAndPassword(auth, form.email, form.password)
-      .then((userData) => {
-        // const user = userCred.user;
-        console.log("this is auth user creds");
-        console.log(userData);
-      })
-      .catch((error) => {
-        setLoading(false);
-        const errorMessage = customErrorMessage(error.code);
-        setMessage(errorMessage);
-        setAlert(true);
-      });
-
-    console.log("added user auth adata");
-
-    setDoc(setUserDoc(form.email), {
-      firstname: form.firstname,
-      lastname: form.lastname,
-      phone: form.phone,
-      email: form.email,
-    })
-      .then((user) => {
-        console.log(user);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-
-        setMessage("Retry to register. An error occured during registration.");
-        setAlert(true);
-        setLoading(false);
-      });
-
-    navigate("/");
   };
 
   return (
@@ -159,11 +117,6 @@ function SignUpBasic() {
                 <Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
                   <Grid item xs={2}>
                     <MKTypography component={MuiLink} href="#" variant="body1" color="white">
-                      <FacebookIcon color="inherit" />
-                    </MKTypography>
-                  </Grid>
-                  <Grid item xs={2}>
-                    <MKTypography component={MuiLink} href="#" variant="body1" color="white">
                       <LocalPhoneIcon color="inherit" />
                     </MKTypography>
                   </Grid>
@@ -175,14 +128,14 @@ function SignUpBasic() {
                 </Grid>
               </MKBox>
               <MKBox pt={4} pb={3} px={3}>
-                <MKBox component="form" onSubmit={handleFormSubmission} role="form">
+                <MKBox component="form" onSubmit={handleSubmit(handleFormSubmission)} role="form">
                   <MKBox mb={1}>
                     <MKInput
                       type="text"
                       label="Firstname"
                       id="firstname"
-                      onChange={(e) => formHandler("firstname", e)}
                       fullWidth
+                      {...register("firstname", { required: true })}
                     />
                   </MKBox>
                   <MKBox mb={1}>
@@ -190,8 +143,8 @@ function SignUpBasic() {
                       type="text"
                       label="Lastname"
                       id="lastnameInput"
-                      onChange={(e) => formHandler("lastname", e)}
                       fullWidth
+                      {...register("lastname", { required: true })}
                     />
                   </MKBox>
                   <MKBox mb={1}>
@@ -199,8 +152,8 @@ function SignUpBasic() {
                       type="phone"
                       label="Phone"
                       id="phoneInput"
-                      onChange={(e) => formHandler("phone", e)}
                       fullWidth
+                      {...register("phone", { required: true })}
                     />
                   </MKBox>
                   <MKBox mb={1}>
@@ -208,8 +161,8 @@ function SignUpBasic() {
                       type="email"
                       label="Email"
                       id="emailInput"
-                      onChange={(e) => formHandler("email", e)}
                       fullWidth
+                      {...register("email", { required: true, pattern: /\S+@\S+\.\S+/ })}
                     />
                   </MKBox>
                   <MKBox mb={1}>
@@ -217,7 +170,11 @@ function SignUpBasic() {
                       type="password"
                       label="Password"
                       id="passwordInput"
-                      onChange={(e) => formHandler("password", e)}
+                      {...register("password", {
+                        required: true,
+                        pattern:
+                          /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/,
+                      })}
                       fullWidth
                     />
                   </MKBox>

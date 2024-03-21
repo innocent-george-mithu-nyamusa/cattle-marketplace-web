@@ -126,6 +126,7 @@ function SignInBasic() {
                     <MKInput
                       type="email"
                       label="Email"
+                      placeholder="Enter your email"
                       fullWidth
                       error={errors.email && true}
                       {...register("email", { required: true, pattern: /\S+@\S+\.\S+/ })}
@@ -136,13 +137,11 @@ function SignInBasic() {
                       type="password"
                       label="Password"
                       id="passwordInput"
-                      placeholder="Min 8 chars at least 1 Uppercase, 1 lowercase, 1 digit and 1 special"
+                      placeholder="Enter you password"
                       fullWidth
                       error={errors.password && true}
                       {...register("password", {
                         required: true,
-                        pattern:
-                          /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/,
                       })}
                     />
                   </MKBox>
