@@ -15,4 +15,5 @@ const UserProvider = (props) => {
 UserProvider.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element], PropTypes.element),
 };
+
 export default UserProvider;

@@ -136,9 +136,14 @@ function SignInBasic() {
                       type="password"
                       label="Password"
                       id="passwordInput"
-                      error={errors.password && true}
-                      {...register("password", { required: true, min: 8 })}
+                      placeholder="Min 8 chars at least 1 Uppercase, 1 lowercase, 1 digit and 1 special"
                       fullWidth
+                      error={errors.password && true}
+                      {...register("password", {
+                        required: true,
+                        pattern:
+                          /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/,
+                      })}
                     />
                   </MKBox>
                   <MKBox display="flex" alignItems="center" ml={-1}>
