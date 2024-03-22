@@ -7,6 +7,7 @@ import Presentation from "layouts/pages/presentation";
 import SignIn from "pages/SignIn";
 import SignUp from "pages/SignUp";
 import PrivateRoute from "routes/PrivateRoute";
+import LayoutRoutes from "./LayoutRoutes";
 import routes from "routes.prod";
 
 export default function AppRouter() {
@@ -15,7 +16,6 @@ export default function AppRouter() {
 
   // Setting page scroll to 0 when changing the route
   useEffect(() => {
-
     let abortController = new AbortController();
     app.auth().onAuthStateChanged(setCurrentUser);
     document.documentElement.scrollTop = 0;
