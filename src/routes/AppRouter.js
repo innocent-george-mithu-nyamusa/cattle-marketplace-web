@@ -11,11 +11,19 @@ import routes from "routes.prod";
 
 export default function AppRouter() {
   const { pathname } = useLocation();
+  const [currentUser, setCurrentUser] = useState(false);
 
   // Setting page scroll to 0 when changing the route
   useEffect(() => {
+
+    let abortController = new AbortController();
+    app.auth().onAuthStateChanged(setCurrentUser);
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
+
+    return () => {
+      abortController.abort();
+    };
   }, [pathname]);
 
   const getRoutes = (allRoutes) =>
