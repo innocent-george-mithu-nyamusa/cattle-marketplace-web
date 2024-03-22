@@ -1,18 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 
 // react-router components
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, BrowserRouter } from "react-router-dom";
 
-// @mui material components
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-
-// themes
-import theme from "assets/theme";
 import Presentation from "layouts/pages/presentation";
-import Homepage from "layouts/pages/homepage";
 import SignIn from "pages/SignIn";
 import SignUp from "pages/SignUp";
+import PrivateRoute from "routes/PrivateRoute";
 import routes from "routes.prod";
 
 export default function AppRouter() {
@@ -31,14 +25,7 @@ export default function AppRouter() {
       }
 
       if (route.route) {
-        const item = (
-          <Route
-            exact
-            path={route.route}
-            element={<route.component {...route.properties} />}
-            key={route.key}
-          />
-        );
+        const item = <Route exact path={route.route} element={route.component} key={route.key} />;
         return item;
       }
 
@@ -46,21 +33,48 @@ export default function AppRouter() {
     });
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-
-      <Routes>
-        {getRoutes(routes)}
-
-        <Route
-          path="/livestock/cattle/brahman"
-          element={<Homepage animalType="cattle" animalBreed="mashona" animalName="cattle" />}
-        />
-        <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/login" element={<SignIn />} />
-        <Route path="/" element={<Presentation />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </ThemeProvider>
+    <BrowserRouter basename="/">
+      <>
+        <Suspense>
+          <Routes>
+            <Route path={"/"} element={<PrivateRoute />}>
+              {currentUser !== null && currentUser !== false ? (
+                <>
+                  <Route
+                    exact
+                    path={`${process.env.PUBLIC_URL}`}
+                    element={<Navigate to={`${process.env.PUBLIC_URL}/`} />}
+                  />
+                  <Route
+                    exact
+                    path={`/`}
+                    element={<Navigate to={`${process.env.PUBLIC_URL}/`} />}
+                  />
+                  <Route path={`/*`} element={<LayoutRoutes />} />
+                </>
+              ) : (
+                <>
+                  <Route
+                    exact
+                    path={`${process.env.PUBLIC_URL}`}
+                    element={<Navigate to={`${process.env.PUBLIC_URL}/login`} />}
+                  />
+                  <Route
+                    exact
+                    path={`/`}
+                    element={<Navigate to={`${process.env.PUBLIC_URL}/login`} />}
+                  />
+                </>
+              )}
+            </Route>
+            {getRoutes(routes)}
+            <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/login" element={<SignIn />} />
+            <Route path="/" element={<Presentation />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </Suspense>
+      </>
+    </BrowserRouter>
   );
 }
