@@ -34,4 +34,10 @@ function CustomLayout({ breadcrumb, title, children }) {
   );
 }
 
+CustomLayout.propTypes = {
+  breadcrumb: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])).isRequired,
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
 export default CustomLayout;
