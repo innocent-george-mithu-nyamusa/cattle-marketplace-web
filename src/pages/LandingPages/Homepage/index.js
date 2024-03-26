@@ -256,7 +256,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                       Physical Description:
                     </MKTypography>
                     <MKTypography variant="body2">
-                      Provide a description of the cow&apos s physical appearance, including its
+                      Provide a description of the cow&apos;s physical appearance, including its
                       color, size, weight, and any notable markings or features. This helps
                       potential buyers visualize the animal.
                     </MKTypography>

@@ -1,8 +1,9 @@
-import { useEffect, Suspense } from "react";
+import { useEffect, Suspense, useState } from "react";
 
 // react-router components
-import { Routes, Route, Navigate, useLocation, BrowserRouter } from "react-router-dom";
-
+import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
+import { auth } from "config/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 import Presentation from "layouts/pages/presentation";
 import SignIn from "pages/SignIn";
 import SignUp from "pages/SignUp";
@@ -11,20 +12,20 @@ import LayoutRoutes from "./LayoutRoutes";
 import routes from "routes.prod";
 
 export default function AppRouter() {
-  const { pathname } = useLocation();
+  // const { pathname } = useLocation();
   const [currentUser, setCurrentUser] = useState(false);
 
   // Setting page scroll to 0 when changing the route
   useEffect(() => {
     let abortController = new AbortController();
-    app.auth().onAuthStateChanged(setCurrentUser);
+    onAuthStateChanged(auth, setCurrentUser);
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
 
     return () => {
       abortController.abort();
     };
-  }, [pathname]);
+  }, []);
 
   const getRoutes = (allRoutes) =>
     allRoutes.map((route) => {
