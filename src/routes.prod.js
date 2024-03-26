@@ -58,7 +58,7 @@ const routes = [
           {
             name: "mashona",
             route: "/livestock/cattle/mashona",
-            component: Homepage,
+            component: <Homepage />,
             properties: { animalType: "cattle", animalBreed: "mashona", animalName: "cattle" },
           },
           // {
@@ -69,25 +69,25 @@ const routes = [
           {
             name: "hereford",
             route: "/livestock/cattle/hereford",
-            component: Homepage,
+            component: <Homepage />,
             properties: { animalType: "cattle", animalBreed: "hereford", animalName: "cattle" },
           },
           {
             name: "simmental",
             route: "/livestock/cattle/simmental",
-            component: Homepage,
+            component: <Homepage />,
             properties: { animalType: "cattle", animalBreed: "simmental", animalName: "cattle" },
           },
           {
             name: "aberdeen-angus",
             route: "/livestock/cattle/arbedeen-angus",
-            component: Homepage,
+            component: <Homepage />,
             properties: { animalType: "cattle", animalBreed: "arbedeen", animalName: "cattle" },
           },
           {
             name: "charolais",
             route: "/livestock/cattle/charolais",
-            component: Homepage,
+            component: <Homepage />,
             properties: { animalType: "cattle", animalBreed: "charolais", animalName: "cattle" },
           },
         ],
@@ -98,19 +98,19 @@ const routes = [
           {
             name: "sheep",
             route: "/livestock/cattle/sheep",
-            component: Homepage,
+            component: <Homepage />,
             properties: { animalType: "sheep", animalBreed: "sheep", animalName: "sheep" },
           },
           {
             name: "goats",
             route: "/livestock/cattle/goats",
-            component: Homepage,
+            component: <Homepage />,
             properties: { animalType: "goats", animalBreed: "goats", animalName: "goats" },
           },
           {
             name: "pigs",
             route: "/livestock/cattle/pigs",
-            component: Homepage,
+            component: <Homepage />,
             properties: { animalType: "pigs", animalBreed: "pigs", animalName: "pigs" },
           },
         ],

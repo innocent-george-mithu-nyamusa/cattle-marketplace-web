@@ -5,6 +5,7 @@ import CustomLayout from "layouts/sections/components/CustomLayout";
 import routes from "routes/Routes";
 
 const LayoutRoutes = () => {
+  console.log("we are hitting these routes");
   return (
     <Fragment>
       <Routes>
