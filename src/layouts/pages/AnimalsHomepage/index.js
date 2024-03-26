@@ -1,3 +1,4 @@
+import AnimalsHomepage from "pages/LandingPages/Homepage";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -333,5 +334,4 @@ AnimalsHomepage.propTypes = {
   animalType: PropTypes.string,
   animalBreed: PropTypes.string,
 };
-
 export default AnimalsHomepage;

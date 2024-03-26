@@ -1,4 +1,4 @@
-import Homepage from "layouts/pages/homepage";
+import Homepage from "pages/Homepage";
 const Routes = [
   {
     name: "mashona",
