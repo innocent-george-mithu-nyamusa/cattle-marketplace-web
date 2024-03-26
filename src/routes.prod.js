@@ -43,7 +43,7 @@ import Icon from "@mui/material/Icon";
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 
-import Homepage from "layouts/pages/homepage";
+import Homepage from "pages/Homepage";
 
 const routes = [
   {
@@ -156,12 +156,12 @@ const routes = [
           {
             name: "about us",
             route: "/pages/landing-pages/about-us",
-            component: AboutUs,
+            component: <AboutUs />,
           },
           {
             name: "contact us",
             route: "/pages/landing-pages/contact-us",
-            component: ContactUs,
+            component: <ContactUs />,
           },
         ],
       },

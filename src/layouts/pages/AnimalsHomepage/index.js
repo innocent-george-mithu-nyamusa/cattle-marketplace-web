@@ -1,4 +1,3 @@
-import AnimalsHomepage from "pages/LandingPages/Homepage";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -87,37 +86,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
     <>
       <MKBox px={1} width="100%" minHeight="100vh" mx="auto" position="relative" zIndex={2}>
         <Grid container spacing={2}>
-          <Grid container item xs={12} md={12} lg={12}>
-            <MKBox
-              display="flex"
-              flexDirection="row"
-              justifyContent="space-between"
-              alignItems="center"
-              width="100%"
-              p={2}
-            >
-              <Link to="/">
-                <MKBox
-                  component="img"
-                  src={logoCT}
-                  alt="Livestock Marketplace"
-                  maxWidth="175px"
-                  m={1}
-                />
-              </Link>
-              <MKBox justifyContent="flex-end">
-                <MKInput
-                  type="text"
-                  name="search"
-                  placeholder="search here"
-                  sx={{
-                    borderRadius: "50%",
-                  }}
-                />
-              </MKBox>
-            </MKBox>
-          </Grid>
-          <Grid container item xs={12} md={3} lg={3}>
+          <Grid container item xs={12} md={2} lg={2}>
             <MKBox
               display="flex"
               flexDirection="column"
@@ -129,7 +98,16 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
               px={3}
               py={2}
             >
-              <MKTypography variant="h6" py={1}>
+              <Link to="/">
+                <MKBox
+                  component="img"
+                  src={logoCT}
+                  alt="Livestock Marketplace"
+                  maxWidth="175px"
+                  m={1}
+                />
+              </Link>
+              <MKTypography variant="h6" py={1} mt={4}>
                 Animal Filters
               </MKTypography>
               <MKTypography variant="body2" my={1}>
@@ -222,7 +200,28 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
               </Accordion>
             </MKBox>
           </Grid>
-          <Grid container item xs={12} md={9} lg={9}>
+          <Grid container item xs={12} md={10} lg={10}>
+            <Grid container item xs={12} md={12} lg={12}>
+              <MKBox
+                display="flex"
+                flexDirection="row"
+                justifyContent="space-between"
+                alignItems="center"
+                width="100%"
+                p={2}
+              >
+                <MKBox justifyContent="flex-end">
+                  <MKInput
+                    type="text"
+                    name="search"
+                    placeholder="search here"
+                    sx={{
+                      borderRadius: "50%",
+                    }}
+                  />
+                </MKBox>
+              </MKBox>
+            </Grid>
             <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap">
               <Card sx={{ maxWidth: "31%", borderRadius: "10px", height: "fit-content" }}>
                 <CardHeader
