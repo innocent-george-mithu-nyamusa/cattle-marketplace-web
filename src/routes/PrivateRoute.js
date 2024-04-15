@@ -19,7 +19,7 @@ const PrivateRoute = () => {
     return () => {
       setIsMounted(false);
     };
-  }, []);
+  }, [currentUser]);
 
   return currentUser !== null ? (
     <Outlet />

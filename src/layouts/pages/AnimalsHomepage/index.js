@@ -23,12 +23,12 @@ import {
   ListItemIcon,
   ListItemText,
   Stack,
+  Paper,
+  InputBase,
 } from "@mui/material";
-import { ExpandMoreSharp, Male, Female, MoreVert } from "@mui/icons-material";
+import { ExpandMoreSharp, Male, Female, MoreVert, Search } from "@mui/icons-material";
 import MKTypography from "components/MKTypography";
 import MKBox from "components/MKBox";
-import MKInput from "components/MKInput";
-// import { customAnimalData } from "utils/functions";
 import logoCT from "assets/images/logo.png";
 // TODO:: DELETE THIS LATER
 import cow from "assets/images/animals/cattle/angus/arbedeen-angus-male.jpg";
@@ -84,8 +84,9 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
 
   return (
     <>
-      <MKBox px={1} width="100%" minHeight="100vh" mx="auto" position="relative" zIndex={2}>
-        <Grid container spacing={2}>
+      <MKBox width="100%" mx="auto" position="relative" zIndex={2}>
+        <Grid container>
+          {/* Sidebar Containing Grid */}
           <Grid container item xs={12} md={2} lg={2}>
             <MKBox
               display="flex"
@@ -107,6 +108,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                   m={1}
                 />
               </Link>
+              <Divider variant="middle" sx={{ width: "100%" }} />
               <MKTypography variant="h6" py={1} mt={4}>
                 Animal Filters
               </MKTypography>
@@ -201,28 +203,48 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
             </MKBox>
           </Grid>
           <Grid container item xs={12} md={10} lg={10}>
-            <Grid container item xs={12} md={12} lg={12}>
-              <MKBox
-                display="flex"
-                flexDirection="row"
-                justifyContent="space-between"
-                alignItems="center"
-                width="100%"
-                p={2}
-              >
-                <MKBox justifyContent="flex-end">
-                  <MKInput
-                    type="text"
-                    name="search"
-                    placeholder="search here"
-                    sx={{
-                      borderRadius: "50%",
-                    }}
-                  />
-                </MKBox>
+            {/* Top Navigation */}
+            <MKBox
+              display="flex"
+              flexDirection="row"
+              justifyContent="space-between"
+              alignItems="center"
+              width="100%"
+              maxHeight="7rem"
+              bgColor="white"
+              coloredShadow="light"
+              py={2}
+              px={0}
+            >
+              <MKBox justifyContent="flex-end" width="fit-content">
+                <MKTypography
+                  variant="subtitle"
+                  color="dark"
+                  sx={{
+                    marginLeft: "1rem",
+                  }}
+                >
+                  Livestock Marketplace
+                </MKTypography>
               </MKBox>
-            </Grid>
-            <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap">
+              <MKBox justifyContent="flex-start" width="fit-content">
+                <Paper
+                  component="form"
+                  sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 100 }}
+                >
+                  <IconButton sx={{ p: "10px" }} aria-label="menu">
+                    <Search />
+                  </IconButton>
+                  <InputBase
+                    sx={{ ml: 1, flex: 1 }}
+                    placeholder="Search..."
+                    inputProps={{ "aria-label": "Search..." }}
+                  />
+                </Paper>
+              </MKBox>
+            </MKBox>
+            {/* Changing Area  */}
+            <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap" height="100%">
               <Card sx={{ maxWidth: "31%", borderRadius: "10px", height: "fit-content" }}>
                 <CardHeader
                   avatar={
@@ -307,7 +329,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                       Physical Description:
                     </MKTypography>
                     <MKTypography variant="body2">
-                      Provide a description of the cow&apos s physical appearance, including its
+                      Provide a description of the cow&apos;s physical appearance, including its
                       color, size, weight, and any notable markings or features. This helps
                       potential buyers visualize the animal.
                     </MKTypography>
