@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Grid from "@mui/material/Grid";
 import {
+  Avatar,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -30,12 +31,14 @@ import {
   ExpandMoreSharp,
   Male,
   Female,
+  ArrowDropDown,
   MoreVert,
   Search,
   NotificationsNone,
 } from "@mui/icons-material";
 import MKTypography from "components/MKTypography";
 import MKBox from "components/MKBox";
+import { stringAvatar } from "utils/functions";
 import logoCT from "assets/images/logo.png";
 // TODO:: DELETE THIS LATER
 import cow from "assets/images/animals/cattle/angus/arbedeen-angus-male.jpg";
@@ -234,7 +237,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                   Livestock Marketplace
                 </MKTypography>
               </MKBox>
-              <MKBox justifyContent="flex-start" width="fit-content">
+              <MKBox display="flex" justifyContent="flex-start" width="fit-content">
                 <Paper
                   component="form"
                   sx={{
@@ -256,15 +259,55 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                     <Search />
                   </IconButton>
                   <InputBase
-                    sx={{ ml: 1, width: "20rem", height: "1.75rem", fontSize: "1rem" }}
+                    sx={{ ml: 1, width: "20rem", height: "1.75rem", fontSize: "0.9rem" }}
                     placeholder="Search"
                     inputProps={{ "aria-label": "Search" }}
                   />
                 </Paper>
-
                 <IconButton sx={{ p: "1px", fontSize: "1.5rem", opacity: "0.9" }} aria-label="menu">
                   <NotificationsNone />
                 </IconButton>
+                <Divider
+                  orientation="vertical"
+                  sx={{ width: "0.1rem", height: "3rem" }}
+                  variant="middle"
+                />
+                <Paper
+                  component="form"
+                  sx={{
+                    p: "4px",
+                    display: "flex",
+                    alignItems: "center",
+                    borderRadius: "1rem",
+                    opacity: "0.6",
+                    marginRight: "1rem",
+                  }}
+                  elevation={0}
+                >
+                  <Avatar
+                    {...stringAvatar("Innocent Nyamusa")}
+                    sx={{
+                      width: 48,
+                      height: 48,
+                      marginLeft: "0.5rem",
+                      marginRight: "0.3rem",
+                      padding: "0.3rem",
+                    }}
+                  />
+                  <IconButton
+                    sx={{ p: "1px", fontSize: "1.5rem", opacity: "0.9", marginRight: "1rem" }}
+                    aria-label="menu"
+                  >
+                    <MKTypography
+                      variant="subtitle"
+                      color="dark"
+                      sx={{ marginLeft: "0.1rem", fontSize: "0.9rem" }}
+                    >
+                      Innocent Nyamusa
+                    </MKTypography>
+                    <ArrowDropDown />
+                  </IconButton>
+                </Paper>
               </MKBox>
             </MKBox>
             {/* Changing Area  */}
@@ -379,4 +422,5 @@ AnimalsHomepage.propTypes = {
   animalType: PropTypes.string,
   animalBreed: PropTypes.string,
 };
+
 export default AnimalsHomepage;
