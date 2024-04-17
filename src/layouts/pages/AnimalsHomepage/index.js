@@ -10,11 +10,11 @@ import {
   AccordionDetails,
   Autocomplete,
   Button,
-  Card,
-  CardHeader,
-  CardMedia,
-  CardActions,
-  CardContent,
+  // Card,
+  // CardHeader,
+  // CardMedia,
+  // CardActions,
+  // CardContent,
   IconButton,
   Chip,
   Divider,
@@ -23,7 +23,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Stack,
+  // Stack,
   Paper,
   InputBase,
 } from "@mui/material";
@@ -32,7 +32,7 @@ import {
   Male,
   Female,
   ArrowDropDown,
-  MoreVert,
+  // MoreVert,
   Search,
   NotificationsNone,
 } from "@mui/icons-material";
@@ -41,7 +41,7 @@ import MKBox from "components/MKBox";
 import { stringAvatar } from "utils/functions";
 import logoCT from "assets/images/logo.png";
 // TODO:: DELETE THIS LATER
-import cow from "assets/images/animals/cattle/angus/arbedeen-angus-male.jpg";
+// import cow from "assets/images/animals/cattle/angus/arbedeen-angus-male.jpg";
 
 function AnimalsHomepage({ animalType, animalBreed, animalName }) {
   const [filters, setFilters] = useState({
@@ -220,7 +220,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
               justifyContent="space-between"
               alignItems="center"
               width="100%"
-              maxHeight="7rem"
+              maxHeight="4rem"
               bgColor="white"
               coloredShadow="light"
               py={2}
@@ -287,11 +287,11 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                   <Avatar
                     {...stringAvatar("Innocent Nyamusa")}
                     sx={{
-                      width: 48,
-                      height: 48,
+                      width: 40,
+                      height: 40,
                       marginLeft: "0.5rem",
                       marginRight: "0.3rem",
-                      padding: "0.3rem",
+                      padding: "0.2rem",
                     }}
                   />
                   <IconButton
@@ -311,104 +311,41 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
               </MKBox>
             </MKBox>
             {/* Changing Area  */}
-            <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap" height="100%">
-              <Card sx={{ maxWidth: "31%", borderRadius: "10px", height: "fit-content" }}>
-                <CardHeader
-                  avatar={
-                    <Stack direction="row" spacing={2}>
-                      <Chip variant="outlined" label="auction" />
-                      <Chip variant="outlined" label="available" />
-                    </Stack>
-                  }
-                  action={
-                    <IconButton aria-label="settings">
-                      <MoreVert />
-                    </IconButton>
-                  }
-                />
-                <CardMedia component="img" width="100" image={cow} alt="Cow" />
-                <CardContent>
-                  <Stack direction="row" spacing={4}>
-                    <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
-                      Breed:
-                    </MKTypography>
-                    <MKTypography variant="body2">Mashona</MKTypography>
-                  </Stack>
-                  <Stack direction="row" spacing={4}>
-                    <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
-                      Age:
-                    </MKTypography>
-                    <MKTypography variant="body2">1 year 2 months</MKTypography>
-                  </Stack>
-                  <Stack direction="column" spacing={1}>
-                    <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
-                      Physical Description:
-                    </MKTypography>
-                    <MKTypography variant="body2">
-                      Provide a description of the cow&apos;s physical appearance, including its
-                      color, size, weight, and any notable markings or features. This helps
-                      potential buyers visualize the animal.
-                    </MKTypography>
-                  </Stack>
-                </CardContent>
-                <CardActions>
-                  <Button>View Details</Button>
-                  <Button>Book inspection</Button>
-                  <Button>Add to cart </Button>
-                </CardActions>
-              </Card>
-              <Card
+            <MKBox
+              sx={{
+                position: "relative",
+                width: "200rem",
+              }}
+            >
+              <MKBox
                 sx={{
-                  maxWidth: "31%",
-                  borderRadius: "10px",
-                  height: "fit-content",
+                  width: "15%",
+                  height: "3rem",
+                  float: "left",
+                  borderBottom: "3rem solid white",
+                  borderRight: "3rem solid transparent",
+                  borderTopLeftRadius: "27px",
+                  textAlign: "center",
                 }}
               >
-                <CardHeader
-                  avatar={
-                    <Stack direction="row" spacing={2}>
-                      <Chip variant="outlined" label="auction" />
-                      <Chip variant="outlined" label="available" />
-                    </Stack>
-                  }
-                  action={
-                    <IconButton aria-label="settings">
-                      <MoreVert />
-                    </IconButton>
-                  }
-                />
-                <CardMedia component="img" width="100" image={cow} alt="Cow" />
-                <CardContent>
-                  <Stack direction="row" spacing={4}>
-                    <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
-                      Breed:
-                    </MKTypography>
-                    <MKTypography variant="body2">Mashona</MKTypography>
-                  </Stack>
-                  <Stack direction="row" spacing={4}>
-                    <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
-                      Age:
-                    </MKTypography>
-                    <MKTypography variant="body2">1 year 2 months</MKTypography>
-                  </Stack>
-                  <Stack direction="column" spacing={1}>
-                    <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
-                      Physical Description:
-                    </MKTypography>
-                    <MKTypography variant="body2">
-                      Provide a description of the cow&apos;s physical appearance, including its
-                      color, size, weight, and any notable markings or features. This helps
-                      potential buyers visualize the animal.
-                    </MKTypography>
-                  </Stack>
-                </CardContent>
-                <CardActions>
-                  <Button> View Details </Button>
-                  <Button> Book inspection </Button>
-                  <Button> Add to cart </Button>
-                </CardActions>
-              </Card>
-            </Stack>
+                <MKTypography variant="subtitle" color="light" sx={{ fontSize: "1.5rem" }}>
+                  All
+                </MKTypography>
+                <Chip variant="primary" label="256" />
+              </MKBox>
+              <MKBox
+                sx={{
+                  width: "100%",
+                  height: "288px",
+                  marginTop: "3rem",
+                  position: "absolute",
+                  backgroundColor: "#FFFFFF",
+                  borderBottomLeftRadius: "8px",
+                  borderBottomRightRadius: "8px",
+                  borderTopRightRadius: "8px",
+                }}
+              ></MKBox>
+            </MKBox>
           </Grid>
         </Grid>
       </MKBox>

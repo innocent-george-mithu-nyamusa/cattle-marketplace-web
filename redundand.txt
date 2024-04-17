@@ -1,0 +1,98 @@
+<Stack direction="row" spacing={2} useFlexGap flexWrap="wrap" height="100%">
+              <Card sx={{ maxWidth: "31%", borderRadius: "10px", height: "fit-content" }}>
+                <CardHeader
+                  avatar={
+                    <Stack direction="row" spacing={2}>
+                      <Chip variant="outlined" label="auction" />
+                      <Chip variant="outlined" label="available" />
+                    </Stack>
+                  }
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVert />
+                    </IconButton>
+                  }
+                />
+                <CardMedia component="img" width="100" image={cow} alt="Cow" />
+                <CardContent>
+                  <Stack direction="row" spacing={4}>
+                    <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
+                      Breed:
+                    </MKTypography>
+                    <MKTypography variant="body2">Mashona</MKTypography>
+                  </Stack>
+                  <Stack direction="row" spacing={4}>
+                    <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
+                      Age:
+                    </MKTypography>
+                    <MKTypography variant="body2">1 year 2 months</MKTypography>
+                  </Stack>
+                  <Stack direction="column" spacing={1}>
+                    <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
+                      Physical Description:
+                    </MKTypography>
+                    <MKTypography variant="body2">
+                      Provide a description of the cow&apos;s physical appearance, including its
+                      color, size, weight, and any notable markings or features. This helps
+                      potential buyers visualize the animal.
+                    </MKTypography>
+                  </Stack>
+                </CardContent>
+                <CardActions>
+                  <Button>View Details</Button>
+                  <Button>Book inspection</Button>
+                  <Button>Add to cart </Button>
+                </CardActions>
+              </Card>
+              <Card
+                sx={{
+                  maxWidth: "31%",
+                  borderRadius: "10px",
+                  height: "fit-content",
+                }}
+              >
+                <CardHeader
+                  avatar={
+                    <Stack direction="row" spacing={2}>
+                      <Chip variant="outlined" label="auction" />
+                      <Chip variant="outlined" label="available" />
+                    </Stack>
+                  }
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVert />
+                    </IconButton>
+                  }
+                />
+                <CardMedia component="img" width="100" image={cow} alt="Cow" />
+                <CardContent>
+                  <Stack direction="row" spacing={4}>
+                    <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
+                      Breed:
+                    </MKTypography>
+                    <MKTypography variant="body2">Mashona</MKTypography>
+                  </Stack>
+                  <Stack direction="row" spacing={4}>
+                    <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
+                      Age:
+                    </MKTypography>
+                    <MKTypography variant="body2">1 year 2 months</MKTypography>
+                  </Stack>
+                  <Stack direction="column" spacing={1}>
+                    <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
+                      Physical Description:
+                    </MKTypography>
+                    <MKTypography variant="body2">
+                      Provide a description of the cow&apos;s physical appearance, including its
+                      color, size, weight, and any notable markings or features. This helps
+                      potential buyers visualize the animal.
+                    </MKTypography>
+                  </Stack>
+                </CardContent>
+                <CardActions>
+                  <Button> View Details </Button>
+                  <Button> Book inspection </Button>
+                  <Button> Add to cart </Button>
+                </CardActions>
+              </Card>
+            </Stack>
