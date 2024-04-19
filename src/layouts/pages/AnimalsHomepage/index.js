@@ -328,10 +328,10 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                   textAlign: "center",
                 }}
               >
-                <MKTypography variant="subtitle" color="light" sx={{ fontSize: "1.5rem" }}>
+                <MKBox sx={{ display: "inline-block", paddingTop: "8px", marginRight: "0.3rem" }}>
                   All
-                </MKTypography>
-                <Chip variant="primary" label="256" />
+                </MKBox>
+                <Chip variant="primary" label="256" sx={{ marginTop: "-4px" }} />
               </MKBox>
               <MKBox
                 sx={{
