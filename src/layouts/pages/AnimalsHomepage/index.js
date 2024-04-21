@@ -364,7 +364,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                       component="form"
                       sx={{
                         p: "4px",
-                        display: "inline-block",
+                        display: "flex",
                         alignItems: "center",
                         borderRadius: "1rem",
                         backgroundColor: "white",
@@ -396,6 +396,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                           fontSize: "1.5rem",
                           opacity: "0.9",
                           marginLeft: "2rem",
+                          marginRight: "0.5rem",
                         }}
                         aria-label="menu"
                       >
