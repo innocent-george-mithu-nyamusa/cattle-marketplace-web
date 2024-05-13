@@ -224,7 +224,6 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
               width="100%"
               maxHeight="4rem"
               bgColor="white"
-              coloredShadow="light"
               py={2}
               px={0}
             >
@@ -428,8 +427,8 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                       <CardHeader
                         avatar={
                           <Stack direction="row" spacing={2}>
-                            <Chip variant="outlined" label="auction" />
-                            <Chip variant="outlined" label="available" />
+                            <Chip variant="primary" label="auction" />
+                            <Chip variant="success" color="primary" label="available" />
                           </Stack>
                         }
                         action={
@@ -440,7 +439,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                       />
                       <CardMedia component="img" width="100" image={cow} alt="Cow" />
                       <CardContent>
-                        <Stack direction="row" spacing={4}>
+                        <Stack direction="row" spacing={4} justifyContent="space-between">
                           <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
                             Breed:
                           </MKTypography>
