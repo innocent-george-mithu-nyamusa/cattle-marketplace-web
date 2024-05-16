@@ -121,7 +121,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                 />
               </Link>
               <Divider variant="middle" sx={{ width: "100%" }} />
-              <MKTypography variant="h6" py={1} mt={4}>
+              <MKTypography variant="h4" py={1} mt={4}>
                 Animal Filters
               </MKTypography>
               <MKTypography variant="body2" my={1}>
@@ -229,7 +229,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
             >
               <MKBox justifyContent="flex-end" width="fit-content">
                 <MKTypography
-                  variant="subtitle"
+                  variant="title"
                   color="dark"
                   sx={{
                     marginLeft: "1rem",
@@ -418,7 +418,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                   <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap" height="100%">
                     <Card
                       sx={{
-                        maxWidth: "31%",
+                        maxWidth: "20%",
                         borderRadius: "10px",
                         height: "fit-content",
                         backgroundColor: "#f0f2f5",
@@ -440,22 +440,26 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                       <CardMedia component="img" width="100" image={cow} alt="Cow" />
                       <CardContent>
                         <Stack direction="row" spacing={4} justifyContent="space-between">
-                          <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
+                          <MKTypography variant="body2" sx={{ fontWeight: 400 }}>
                             Breed:
                           </MKTypography>
-                          <MKTypography variant="body2">Mashona</MKTypography>
+                          <MKTypography variant="body2" sx={{ fontWeight: 200 }}>
+                            Mashona
+                          </MKTypography>
                         </Stack>
-                        <Stack direction="row" spacing={4}>
-                          <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
+                        <Stack direction="row" spacing={4} justifyContent="space-between">
+                          <MKTypography variant="body2" sx={{ fontWeight: 400 }}>
                             Age:
                           </MKTypography>
-                          <MKTypography variant="body2">1 year 2 months</MKTypography>
+                          <MKTypography variant="body2" sx={{ fontWeight: 200 }}>
+                            1 year 2 months
+                          </MKTypography>
                         </Stack>
                         <Stack direction="column" spacing={1}>
-                          <MKTypography variant="body2" sx={{ fontWeight: 600 }}>
+                          <MKTypography variant="body2" sx={{ fontWeight: 400 }}>
                             Description:
                           </MKTypography>
-                          <MKTypography variant="body2">
+                          <MKTypography variant="body2" sx={{ fontWeight: 200 }}>
                             {truncateString(
                               `Provide a description of the cow's physical appearance, including its color, size, weight, and any notable markings or features. This
                             helps potential buyers visualize the animal`,
