@@ -39,6 +39,6 @@ const AnimalProvider = (props) => {
 };
 
 AnimalProvider.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.element], PropTypes.element),
+  children: PropTypes.node,
 };
 export default AnimalProvider;

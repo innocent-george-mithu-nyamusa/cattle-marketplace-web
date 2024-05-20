@@ -10,7 +10,9 @@ export async function getAllListedAnimals() {
       where("status", "==", "listed")
     );
     const listedAnimalsSnapshot = await getDocs(listedAnimalsCollection);
+
     const listAnimals = listedAnimalsSnapshot.docs.map((doc) => doc.data());
+    console.log("List animals \n", listAnimals);
     return listAnimals;
   } catch (error) {
     console.error(error);

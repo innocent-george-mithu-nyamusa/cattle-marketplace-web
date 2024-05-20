@@ -26,7 +26,7 @@ const UserProvider = (props) => {
 };
 
 UserProvider.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.element], PropTypes.element),
+  children: PropTypes.node,
 };
 
 export default UserProvider;

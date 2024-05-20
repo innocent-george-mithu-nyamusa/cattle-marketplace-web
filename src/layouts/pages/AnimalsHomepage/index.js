@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import PropTypes from "prop-types";
@@ -10,11 +10,6 @@ import {
   AccordionDetails,
   Autocomplete,
   Button,
-  Card,
-  CardHeader,
-  CardMedia,
-  CardActions,
-  CardContent,
   IconButton,
   Chip,
   Divider,
@@ -32,7 +27,6 @@ import {
   Male,
   Female,
   ArrowDropDown,
-  MoreVert,
   Search,
   NotificationsNone,
   Tune,
@@ -40,10 +34,14 @@ import {
 import MKTypography from "components/MKTypography";
 import MKBox from "components/MKBox";
 import MKButton from "components/MKButton";
-import { stringAvatar, truncateString } from "utils/functions";
+import AnimalCard from "components/AnimalCard";
+import EmptyListItem from "components/EmptyListItem";
+import { stringAvatar } from "utils/functions";
 import logoCT from "assets/images/logo.png";
+
+import AnimalContext from "_helper/animal";
+
 // TODO:: DELETE THIS LATER
-import cow from "assets/images/animals/cattle/angus/arbedeen-angus-male.jpg";
 
 function AnimalsHomepage({ animalType, animalBreed, animalName }) {
   const [filters, setFilters] = useState({
@@ -54,8 +52,10 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
   });
 
   const [animalData, setAnimalData] = useState([]);
+  const { allAnimals } = useContext(AnimalContext);
 
   console.log(animalData);
+  console.log("all Animals \n" + allAnimals);
 
   useEffect(() => {
     async function fetchData() {
@@ -79,6 +79,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
     e.preventDefault();
     addFilters({ gender: "male" });
   };
+
   const addFemaleGenderFilter = (e) => {
     e.preventDefault();
     addFilters({ gender: "female" });
@@ -234,9 +235,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                   sx={{
                     marginLeft: "1rem",
                   }}
-                >
-                  Livestock Marketplace
-                </MKTypography>
+                ></MKTypography>
               </MKBox>
               <MKBox display="flex" justifyContent="flex-start" width="fit-content">
                 <Paper
@@ -317,6 +316,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                 padding: "2rem 2rem",
                 width: "100vw",
                 height: "fill-available",
+                minHeight: "75vh",
               }}
             >
               <MKBox
@@ -415,66 +415,13 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                       Actions
                     </MKButton>
                   </MKBox>
+                  {/* All Animals List Area  */}
                   <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap" height="100%">
-                    <Card
-                      sx={{
-                        maxWidth: "20%",
-                        borderRadius: "10px",
-                        height: "fit-content",
-                        backgroundColor: "#f0f2f5",
-                      }}
-                    >
-                      <CardHeader
-                        avatar={
-                          <Stack direction="row" spacing={2}>
-                            <Chip variant="primary" label="auction" />
-                            <Chip variant="success" color="primary" label="available" />
-                          </Stack>
-                        }
-                        action={
-                          <IconButton aria-label="settings">
-                            <MoreVert />
-                          </IconButton>
-                        }
-                      />
-                      <CardMedia component="img" width="100" image={cow} alt="Cow" />
-                      <CardContent>
-                        <Stack direction="row" spacing={4} justifyContent="space-between">
-                          <MKTypography variant="body2" sx={{ fontWeight: 400 }}>
-                            Breed:
-                          </MKTypography>
-                          <MKTypography variant="body2" sx={{ fontWeight: 200 }}>
-                            Mashona
-                          </MKTypography>
-                        </Stack>
-                        <Stack direction="row" spacing={4} justifyContent="space-between">
-                          <MKTypography variant="body2" sx={{ fontWeight: 400 }}>
-                            Age:
-                          </MKTypography>
-                          <MKTypography variant="body2" sx={{ fontWeight: 200 }}>
-                            1 year 2 months
-                          </MKTypography>
-                        </Stack>
-                        <Stack direction="column" spacing={1}>
-                          <MKTypography variant="body2" sx={{ fontWeight: 400 }}>
-                            Description:
-                          </MKTypography>
-                          <MKTypography variant="body2" sx={{ fontWeight: 200 }}>
-                            {truncateString(
-                              `Provide a description of the cow's physical appearance, including its color, size, weight, and any notable markings or features. This
-                            helps potential buyers visualize the animal`,
-                              70,
-                              true
-                            )}
-                          </MKTypography>
-                        </Stack>
-                      </CardContent>
-                      <CardActions>
-                        <Button>View Details</Button>
-                        <Button>Book inspection</Button>
-                        <Button>Add to cart </Button>
-                      </CardActions>
-                    </Card>
+                    {allAnimals.length != 0 && allAnimals != null ? (
+                      allAnimals.map((animal, index) => <AnimalCard key={index} />)
+                    ) : (
+                      <EmptyListItem />
+                    )}
                   </Stack>
                 </MKBox>
               </MKBox>
@@ -487,7 +434,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
 }
 
 AnimalsHomepage.propTypes = {
-  props: PropTypes.oneOfType([PropTypes.string], PropTypes.string),
+  props: PropTypes.oneOfType([PropTypes.any], PropTypes.any),
   animalName: PropTypes.string,
   animalType: PropTypes.string,
   animalBreed: PropTypes.string,
