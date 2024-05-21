@@ -44,6 +44,7 @@ import AnimalContext from "_helper/animal";
 // TODO:: DELETE THIS LATER
 
 function AnimalsHomepage({ animalType, animalBreed, animalName }) {
+  const { allAnimals, handleFetchData } = useContext(AnimalContext);
   const [filters, setFilters] = useState({
     age: animalType,
     gender: "",
@@ -52,19 +53,17 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
   });
 
   const [animalData, setAnimalData] = useState([]);
-  const { allAnimals } = useContext(AnimalContext);
 
-  console.log(animalData);
-  console.log("all Animals \n" + allAnimals);
+  console.log(animalData, filters);
 
   useEffect(() => {
     async function fetchData() {
-      const data = [];
+      const data = await handleFetchData();
       setAnimalData(data);
     }
 
     fetchData();
-  }, [filters.name]);
+  }, []);
 
   const addFilters = (filter) => {
     setFilters((state) => [...state, filter]);
@@ -235,7 +234,9 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                   sx={{
                     marginLeft: "1rem",
                   }}
-                ></MKTypography>
+                >
+                  s
+                </MKTypography>
               </MKBox>
               <MKBox display="flex" justifyContent="flex-start" width="fit-content">
                 <Paper
@@ -418,7 +419,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                   {/* All Animals List Area  */}
                   <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap" height="100%">
                     {allAnimals.length != 0 && allAnimals != null ? (
-                      allAnimals.map((animal, index) => <AnimalCard key={index} />)
+                      allAnimals.map((animal, index) => <AnimalCard key={index} animal={animal} />)
                     ) : (
                       <EmptyListItem />
                     )}
