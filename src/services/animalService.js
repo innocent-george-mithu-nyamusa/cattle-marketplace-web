@@ -10,9 +10,30 @@ export async function getAllListedAnimals() {
       where("status", "==", "listed")
     );
     const listedAnimalsSnapshot = await getDocs(listedAnimalsCollection);
+    const listAnimals = listedAnimalsSnapshot.docs.map((doc) => ({
+      id: doc.id,
+      img: doc.get("img"),
+      animalBreed: doc.get("animalBreed"),
+      animalType: doc.get("animalType"),
+      animalAskingPrice: parseFloat(doc.get("animalAskingPrice")).toFixed(2),
+      animalCollectionLocation: doc.get("animalCollectionLocation"),
+      animalColor: doc.get("animalColor"),
+      animalDispatchDate: doc.get("animalDispatchDate"),
+      animalName: doc.get("animalName"),
+      animalSickness: doc.get("animalSickness"),
+      animalWeight: parseInt(doc.get("animalWeight")),
+      animalYearsAge: parseInt(doc.get("animalYearsAge")),
+      description: doc.get("description"),
+      imageDownloadUrl: doc.get("imageDownloadUrl"),
+      auctioned: doc.get("auctioned"),
+      available: doc.get("available"),
+      status: doc.get("status"),
+      variants: doc.get("variants"),
+      supplierName: doc.get("supplierName"),
+      supplierNumber: doc.get("supplierNumber"),
+    }));
+    console.log(listAnimals);
 
-    const listAnimals = listedAnimalsSnapshot.docs.map((doc) => doc.data());
-    console.log("List animals \n", listAnimals);
     return listAnimals;
   } catch (error) {
     console.error(error);
