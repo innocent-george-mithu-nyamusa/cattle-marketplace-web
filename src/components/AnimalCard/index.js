@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   Card,
@@ -10,11 +12,31 @@ import {
   Stack,
 } from "@mui/material";
 import { MoreVert } from "@mui/icons-material";
+
+import PropTypes from "prop-types";
+
 import MKTypography from "components/MKTypography";
 import { truncateString } from "utils/functions";
-import cow from "assets/images/animals/cattle/angus/arbedeen-angus-male.jpg";
+import AnimalContext from "_helper/animal";
+// import cow from "assets/images/animals/cattle/angus/arbedeen-angus-male.jpg";
 
-function AnimalCard() {
+function AnimalCard({ id, img, animalBreed, animalType, animalName, animalYearsAge, description }) {
+  const { pickSelectedItem } = useContext(AnimalContext);
+  const navigate = useNavigate();
+
+  const handleNavigation = (id, animalType, animalName) => {
+    pickSelectedItem(id);
+    navigate(decodeURI(`${process.env.PUBLIC_URL}/${animalType}/${animalName}`));
+  };
+
+  const handleBookingInspection = (id) => {
+    console.log("Sucess book for inspection", id);
+  };
+
+  const handleAddToCart = (id) => {
+    console.log("added to cart ", id);
+  };
+
   return (
     <Card
       sx={{
@@ -37,14 +59,14 @@ function AnimalCard() {
           </IconButton>
         }
       />
-      <CardMedia component="img" width="100" image={cow} alt="Cow" />
+      <CardMedia component="img" width="100" image={img} alt={`image of ${animalBreed}`} />
       <CardContent>
         <Stack direction="row" spacing={4} justifyContent="space-between">
           <MKTypography variant="body2" sx={{ fontWeight: 400 }}>
             Breed:
           </MKTypography>
           <MKTypography variant="body2" sx={{ fontWeight: 200 }}>
-            Mashona
+            {animalBreed}
           </MKTypography>
         </Stack>
         <Stack direction="row" spacing={4} justifyContent="space-between">
@@ -52,7 +74,7 @@ function AnimalCard() {
             Age:
           </MKTypography>
           <MKTypography variant="body2" sx={{ fontWeight: 200 }}>
-            1 year 2 months
+            {animalYearsAge} Years
           </MKTypography>
         </Stack>
         <Stack direction="column" spacing={1}>
@@ -60,22 +82,27 @@ function AnimalCard() {
             Description:
           </MKTypography>
           <MKTypography variant="body2" sx={{ fontWeight: 200 }}>
-            {truncateString(
-              `Provide a description of the cow's physical appearance, including its color, size, weight, and any notable markings or features. This
-              helps potential buyers visualize the animal`,
-              70,
-              true
-            )}
+            {truncateString(description, 70, true)}
           </MKTypography>
         </Stack>
       </CardContent>
       <CardActions>
-        <Button>View Details</Button>
-        <Button>Book inspection</Button>
-        <Button>Add to cart </Button>
+        <Button onClick={handleNavigation(id, animalType, animalName)}>View Details</Button>
+        <Button onClick={handleBookingInspection(id)}>Book inspection</Button>
+        <Button onClick={handleAddToCart(id)}>Add to cart </Button>
       </CardActions>
     </Card>
   );
 }
+
+AnimalCard.propTypes = {
+  id: PropTypes.string,
+  img: PropTypes.string,
+  animalBreed: PropTypes.string,
+  animalType: PropTypes.string,
+  animalName: PropTypes.string,
+  animalYearsAge: PropTypes.number,
+  description: PropTypes.string,
+};
 
 export default AnimalCard;
