@@ -3,7 +3,7 @@ import Context from "./index";
 import { signInUser, SignUpUserAccount, createUserAccount } from "services/userAuthService";
 import PropTypes from "prop-types";
 
-const UserProvider = (props) => {
+const UserProvider = ({ children }) => {
   const loginUser = async (loginDetails) => {
     const result = await signInUser(loginDetails);
     return result;
@@ -22,11 +22,11 @@ const UserProvider = (props) => {
     return createUserAccountResult;
   };
 
-  return <Context.Provider value={{ loginUser, signUpUser }}>{props.children}</Context.Provider>;
+  return <Context.Provider value={{ loginUser, signUpUser }}>{children}</Context.Provider>;
 };
 
 UserProvider.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.any,
 };
 
 export default UserProvider;
