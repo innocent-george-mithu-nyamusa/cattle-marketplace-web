@@ -23,6 +23,29 @@ const AnimalProvider = (props) => {
     setAllAnimals(updatedAnimals);
   };
 
+  const handleFetchData = () => {
+    const fetchData = async () => {
+      try {
+        const animals = await getAllListedAnimals();
+        // Do something with the animals array:
+        // - Update state
+        setAllAnimals(animals);
+        // - Display the data in your component
+        // ...
+      } catch (error) {
+        console.error("Error fetching animals:", error);
+        // Handle error appropriately
+      }
+    };
+
+    fetchData();
+  };
+
+  const pickSelectedItem = (id) => {
+    const foundAnimal = allAnimals.find((animal) => animal.id === id);
+    setSelectedAnimal(foundAnimal);
+  };
+
   return (
     <Context.Provider
       value={{
@@ -30,7 +53,9 @@ const AnimalProvider = (props) => {
         allAnimals,
         selectedAnimal,
         setSelectedAnimal,
+        handleFetchData,
         handleListAnimal,
+        pickSelectedItem,
       }}
     >
       {props.children}
@@ -39,6 +64,6 @@ const AnimalProvider = (props) => {
 };
 
 AnimalProvider.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.any,
 };
 export default AnimalProvider;
