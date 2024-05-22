@@ -24,16 +24,16 @@ function AnimalCard({ id, img, animalBreed, animalType, animalName, animalYearsA
   const { pickSelectedItem } = useContext(AnimalContext);
   const navigate = useNavigate();
 
-  const handleNavigation = (id, animalType, animalName) => {
+  const handleNavigation = () => {
     pickSelectedItem(id);
     navigate(decodeURI(`${process.env.PUBLIC_URL}/${animalType}/${animalName}`));
   };
 
-  const handleBookingInspection = (id) => {
+  const handleBookingInspection = () => {
     console.log("Sucess book for inspection", id);
   };
 
-  const handleAddToCart = (id) => {
+  const handleAddToCart = () => {
     console.log("added to cart ", id);
   };
 
@@ -87,9 +87,9 @@ function AnimalCard({ id, img, animalBreed, animalType, animalName, animalYearsA
         </Stack>
       </CardContent>
       <CardActions>
-        <Button onClick={handleNavigation(id, animalType, animalName)}>View Details</Button>
-        <Button onClick={handleBookingInspection(id)}>Book inspection</Button>
-        <Button onClick={handleAddToCart(id)}>Add to cart </Button>
+        <Button onClick={handleNavigation}>View Details</Button>
+        <Button onClick={handleBookingInspection}>Book inspection</Button>
+        <Button onClick={handleAddToCart}>Add cart </Button>
       </CardActions>
     </Card>
   );
