@@ -1,4 +1,5 @@
 import Homepage from "pages/Homepage";
+import AnimalDetailPage from "pages/AnimalDetailsPage";
 const Routes = [
   {
     name: "mashona",
@@ -7,9 +8,9 @@ const Routes = [
     properties: { animalType: "cattle", animalBreed: "mashona", animalName: "cattle" },
   },
   {
-    name: "brahman",
-    route: "/livestock/cattle/brahman",
-    component: <Homepage />,
+    name: "details",
+    route: "/details",
+    component: <AnimalDetailPage />,
     properties: { animalType: "cattle", animalBreed: "brahman", animalName: "cattle" },
   },
   {
