@@ -235,7 +235,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                     marginLeft: "1rem",
                   }}
                 >
-                  s
+                  products
                 </MKTypography>
               </MKBox>
               <MKBox display="flex" justifyContent="flex-start" width="fit-content">
@@ -339,7 +339,11 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                   <MKBox sx={{ display: "inline-block", paddingTop: "8px", marginRight: "0.3rem" }}>
                     All
                   </MKBox>
-                  <Chip variant="primary" label="256" sx={{ marginTop: "-4px" }} />
+                  <Chip
+                    variant="primary"
+                    label={allAnimals.length ?? 0}
+                    sx={{ marginTop: "-4px" }}
+                  />
                 </MKBox>
 
                 <MKBox
@@ -418,8 +422,8 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                   </MKBox>
                   {/* All Animals List Area  */}
                   <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap" height="100%">
-                    {allAnimals.length != 0 && allAnimals != null ? (
-                      allAnimals.map((animal, index) => <AnimalCard key={index} animal={animal} />)
+                    {allAnimals != null ? (
+                      allAnimals.map((animal, index) => <AnimalCard key={index} {...animal} />)
                     ) : (
                       <EmptyListItem />
                     )}
