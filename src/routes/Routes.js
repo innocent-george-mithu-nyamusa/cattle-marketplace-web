@@ -1,5 +1,6 @@
 import Homepage from "pages/Homepage";
 import AnimalDetailPage from "pages/AnimalDetailsPage";
+
 const Routes = [
   {
     name: "mashona",
@@ -32,10 +33,8 @@ const Routes = [
     properties: { animalType: "cattle", animalBreed: "arbedeen", animalName: "cattle" },
   },
   {
-    name: "charolais",
-    route: "/livestock/cattle/charolais",
-    component: <Homepage />,
-    properties: { animalType: "cattle", animalBreed: "charolais", animalName: "cattle" },
+    route: "/:livestock/:cattle/",
+    component: <AnimalDetailPage />,
   },
 ];
 
