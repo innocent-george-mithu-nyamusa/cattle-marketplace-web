@@ -5,9 +5,10 @@ import MKBox from "components/MKBox";
 
 function ImageSliderComponent({ baseUrl }) {
   const paging = (i) => {
+    console.log(i);
     return (
       <>
-        <Media src={`${baseUrl}/abstract0${i + 1}.jpg`} />
+        <Media src={`${baseUrl}`} />
       </>
     );
   };
@@ -25,16 +26,16 @@ function ImageSliderComponent({ baseUrl }) {
     <MKBox className="slider-container">
       <Slider customPaging={paging} {...settings}>
         <MKBox>
-          <Media src={baseUrl + "/abstract01.jpg"} />
+          <Media src={baseUrl} />
         </MKBox>
         <MKBox>
-          <Media src={baseUrl + "/abstract02.jpg"} />
+          <Media src={baseUrl} />
         </MKBox>
         <MKBox>
-          <Media src={baseUrl + "/abstract03.jpg"} />
+          <Media src={baseUrl} />
         </MKBox>
         <MKBox>
-          <Media src={baseUrl + "/abstract04.jpg"} />
+          <Media src={baseUrl} />
         </MKBox>
       </Slider>
     </MKBox>
