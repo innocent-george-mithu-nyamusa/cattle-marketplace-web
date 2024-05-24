@@ -15,7 +15,7 @@ function AnimalDetailsPage() {
       <MKBox width="100%" mx="auto" position="relative" zIndex={2}>
         <Grid container spacing={3} alignItems="center">
           <Grid item xs={12} lg={6}>
-            <ImageSliderComponent baseUrl="https://" />
+            <ImageSliderComponent baseUrl="https://firebasestorage.googleapis.com/v0/b/livestock-marketplace.appspot.com/o/animals%2Fpigs_whatsapp%20image%202023-11-15%20at%2010.47.14%20am.jpeg?alt=media&token=9a9ed5ed-611c-42f4-8a2d-5111a630cdd5" />
           </Grid>
           <Grid
             item
