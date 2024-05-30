@@ -78,18 +78,18 @@ function AnimalDetailsPage() {
               sx={{
                 flexDirection: "row",
                 alignItems: "center",
+                display: "flex",
               }}
             >
               <MKButton
                 type="submit"
                 variant="gradient"
                 color="warning"
-                sx={{ marginRight: 2 }}
-                flex={{ xs: 1 }}
+                sx={{ flex: 1, margin: "0 1rem" }}
               >
-                Add to Your Cart&nbsp; <AddShoppingCartIcon />
+                Add to Cart&nbsp; <AddShoppingCartIcon />
               </MKButton>
-              <MKButton variant="gradient" width={{ xs: 100 }}>
+              <MKButton variant="gradient" sx={{ flex: 1, margin: "0 1rem" }}>
                 add to wishlist
               </MKButton>
             </MKBox>
