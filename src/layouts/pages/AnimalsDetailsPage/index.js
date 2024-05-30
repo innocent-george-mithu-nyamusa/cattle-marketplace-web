@@ -33,6 +33,7 @@ function AnimalDetailsPage() {
             <ImageSliderComponent baseUrl="https://firebasestorage.googleapis.com/v0/b/livestock-marketplace.appspot.com/o/animals%2Fpigs_whatsapp%20image%202023-11-15%20at%2010.47.14%20am.jpeg?alt=media&token=9a9ed5ed-611c-42f4-8a2d-5111a630cdd5" />
           </Grid>
           <Grid
+            item
             xs={12}
             sm={12}
             md={6}
@@ -78,14 +79,13 @@ function AnimalDetailsPage() {
                 flexDirection: "row",
                 alignItems: "center",
               }}
-              justifyContent={{ xs: "space-between" }}
             >
               <MKButton
                 type="submit"
                 variant="gradient"
                 color="warning"
-                width={{ xs: 100 }}
                 sx={{ marginRight: 2 }}
+                flex={{ xs: 1 }}
               >
                 Add to Your Cart&nbsp; <AddShoppingCartIcon />
               </MKButton>
