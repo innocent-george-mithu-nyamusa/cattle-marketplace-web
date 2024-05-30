@@ -28,6 +28,7 @@ function AnimalCard({ id, img, animalBreed, animalType, animalName, animalYearsA
     pickSelectedItem(id);
     navigate(decodeURI(`${process.env.PUBLIC_URL}/${animalType}/${animalName}`));
   };
+  //1.
 
   const handleBookingInspection = () => {
     console.log("Sucess book for inspection", id);
