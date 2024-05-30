@@ -44,7 +44,7 @@ function AnimalCard({ id, img, animalBreed, animalType, animalName, animalYearsA
         height: "fit-content",
         backgroundColor: "#f0f2f5",
       }}
-      maxWidth={{
+      maxwidth={{
         xs: "100%",
         md: "calc(100%/4)",
         lg: "calc(100%/4)",
