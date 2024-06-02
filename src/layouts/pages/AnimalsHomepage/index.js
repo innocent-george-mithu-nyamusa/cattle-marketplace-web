@@ -90,7 +90,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
       <MKBox width="100%" mx="auto" position="relative" zIndex={2}>
         <Grid container>
           {/* Sidebar Containing Grid */}
-          <Grid container item xs={12} md={2} lg={2}>
+          <Grid container item xs={0} md={2} lg={2}>
             <MKBox
               display="flex"
               flexDirection="column"
