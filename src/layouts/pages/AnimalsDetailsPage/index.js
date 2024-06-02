@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import { Grid, Rating } from "@mui/material";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { Grid, Rating, Divider } from "@mui/material";
+import { AddShoppingCart } from "@mui/icons-material";
 import ImageSliderComponent from "components/ImageSliderComponent";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -44,14 +44,24 @@ function AnimalDetailsPage() {
             sx={{ display: "flex", flexDirection: "column", justifyContent: "flex-start" }}
             p={{ xs: 1, lg: 2, xl: 2 }}
           >
-            <MKTypography variant="h1" my={{ xs: 1, sm: 1.5, md: 1, lg: 1.5 }}>
-              Animal Name
+            <MKTypography
+              variant="button"
+              mt={{ xs: 1, sm: 1.5, md: 1, lg: 1.5 }}
+              textTransform="uppercase"
+              color="text"
+              itemAlign={{ xs: "center" }}
+            >
+              animal breed
             </MKTypography>
-            <MKTypography variant="subtitle" mt={1}>
-              Slight description on the animal
+            <MKTypography
+              variant="h1"
+              mb={{ xs: 1, sm: 1.5, md: 1, lg: 1.5 }}
+              textTransform="capitalize"
+            >
+              Animal name
             </MKTypography>
             <MKBox
-              my={2}
+              my={0.5}
               sx={{
                 flexDirection: "row",
                 justifyContent: "flex-start",
@@ -65,12 +75,63 @@ function AnimalDetailsPage() {
                   setValue(newValue);
                 }}
                 size="large"
-                sx={{ marginRight: "calc(100%/20)" }}
+                sx={{ marginRight: "calc(100%/20)", verticalAlign: "top" }}
                 p={1}
               />
               <MKTypography variant="subtitle">75 Reviews</MKTypography>
             </MKBox>
-            <MKTypography variant="h1" py={1} mt={2}>
+            <MKTypography variant="subtitle" my={0.5} textTransform="capitalize">
+              is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+              the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer
+              took a galley of type and scrambled it to make a type specimen book. It has survived
+              not only five centuries, but also the leap into electronic typesetting, remaining
+              essentially unchanged. It was popularised in the 1960s with the release of Letraset
+              sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+              software like Aldus PageMaker including versions of Lorem Ipsum.
+            </MKTypography>
+
+            <MKBox
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                border: "none",
+                // borderColor: "divider",
+                borderRadius: 1,
+                color: "text.secondary",
+                width: "fit-content",
+                "& svg": {
+                  m: 1,
+                },
+                "& hr": {
+                  mx: 0.5,
+                },
+              }}
+              my={2}
+              // p={1}
+            >
+              <MKBox flexDirection="column" mx={0.5}>
+                <MKTypography variant="button" textTransform="upprecase">
+                  Weight
+                </MKTypography>
+                <MKTypography fontWeight="bold">1200 kg</MKTypography>
+              </MKBox>
+              <Divider orientation="vertical" variant="middle" height="calc(100%/ 3)" />
+              <MKBox flexDirection="column" mx={1}>
+                <MKTypography variant="button" textTransform="upprecase">
+                  Age
+                </MKTypography>
+                <MKTypography fontWeight="bold">2 years</MKTypography>
+              </MKBox>
+              <Divider orientation="vertical" variant="middle" height="calc(100%/ 3)" />
+              <MKBox flexDirection="column" mx={1}>
+                <MKTypography variant="button" textTransform="upprecase">
+                  Color
+                </MKTypography>
+                <MKTypography fontWeight="bold">Brown And White</MKTypography>
+              </MKBox>
+            </MKBox>
+
+            <MKTypography variant="h1" py={1} mt={1}>
               $145
             </MKTypography>
             <MKBox
@@ -87,7 +148,7 @@ function AnimalDetailsPage() {
                 color="warning"
                 sx={{ flex: 1, margin: "0 1rem" }}
               >
-                Add to Cart&nbsp; <AddShoppingCartIcon />
+                Add to Cart&nbsp; <AddShoppingCart />
               </MKButton>
               <MKButton variant="gradient" sx={{ flex: 1, margin: "0 1rem" }}>
                 add to wishlist
