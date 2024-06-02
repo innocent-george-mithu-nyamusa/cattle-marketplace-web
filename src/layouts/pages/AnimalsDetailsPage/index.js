@@ -78,7 +78,9 @@ function AnimalDetailsPage() {
                 sx={{ marginRight: "calc(100%/20)", verticalAlign: "top" }}
                 p={1}
               />
-              <MKTypography variant="subtitle">75 Reviews</MKTypography>
+              <MKTypography variant="subtitle" fontWeight="bold">
+                75 reviews
+              </MKTypography>
             </MKBox>
             <MKTypography variant="subtitle" my={0.5} textTransform="capitalize">
               is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
@@ -89,7 +91,6 @@ function AnimalDetailsPage() {
               sheets containing Lorem Ipsum passages, and more recently with desktop publishing
               software like Aldus PageMaker including versions of Lorem Ipsum.
             </MKTypography>
-
             <MKBox
               sx={{
                 display: "flex",
@@ -147,10 +148,12 @@ function AnimalDetailsPage() {
                 variant="gradient"
                 color="warning"
                 sx={{ flex: 1, margin: "0 1rem" }}
+                size="large"
               >
-                Add to Cart&nbsp; <AddShoppingCart />
+                Add to Kraal&nbsp;
+                <AddShoppingCart />
               </MKButton>
-              <MKButton variant="gradient" sx={{ flex: 1, margin: "0 1rem" }}>
+              <MKButton variant="gradient" size="large" sx={{ flex: 1, margin: "0 1rem" }}>
                 add to wishlist
               </MKButton>
             </MKBox>
