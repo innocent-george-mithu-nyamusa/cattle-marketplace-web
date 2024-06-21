@@ -86,14 +86,29 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
   };
 
   return (
-    <Grid container fullWidth>
+    <Grid container>
       {/* Sidebar Containing Grid */}
-      <Grid container xs={12} sm={3} md={3} lg={2}>
-        <Link to="/">
-          <MKBox component="img" src={logoCT} alt="Livestock Marketplace" maxWidth="175px" m={1} />
+      <Grid item container xs={0} sm={3} md={3} lg={2} sx={{ justifyContent: "center" }}>
+        <Link
+          to="/"
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            width: "fill-available",
+          }}
+        >
+          <MKBox
+            component="img"
+            width="fill-available"
+            src={logoCT}
+            alt="Livestock Marketplace"
+            maxWidth="175px"
+            m={1}
+          />
         </Link>
         <MKBox
-          display="flex"
+          display={{ xs: "none", sm: "flex" }}
           flexDirection="column"
           alignItems="start"
           justifyContent="start"
@@ -196,13 +211,13 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
           </Accordion>
         </MKBox>
       </Grid>
-      <Grid container xs={12} sm={9} md={9} lg={10}>
+      <Grid item container xs={12} sm={9} md={9} lg={10}>
         {/* Top Navigation */}
         <MainTopNavigation />
         {/* Changing Area  */}
         <MKBox
+          padding={{ xs: "1rem 0", sm: "1rem 1rem", md: "rem 1.5rem", lg: "2rem 2rem" }}
           sx={{
-            padding: "2rem 2rem",
             width: "100vw",
             height: "fill-available",
             minHeight: "75vh",
@@ -215,7 +230,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
           >
             <MKBox
               display={{ xs: "none", sm: "none", md: "block" }}
-              width={{ lg: "15%" }}
+              width={{ xs: 0, sm: 0, md: "40%", lg: "15%" }}
               sx={{
                 height: "3rem",
                 float: "left",
@@ -230,18 +245,15 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
               </MKBox>
               <Chip variant="primary" label={allAnimals.length ?? 0} sx={{ marginTop: "-4px" }} />
             </MKBox>
-
             <MKBox
-              borderTopLeftRadius={{ xs: "27px", md: "27px" }}
+              borderTopLeftRadius={{ xs: "27px", sm: "27px", md: "27px" }}
+              marginTop={{ xs: "0px", sm: "0.5rem", md: "3rem" }}
+              borderRadius={{ xs: "27px", sm: "27px", md: "0 27px 27px 27px" }}
+              padding={{ xs: "0.5rem", sm: "1rem", md: "1.5" }}
               sx={{
                 width: "100%",
-                marginTop: "3rem",
                 position: "absolute",
                 backgroundColor: "#FFFFFF",
-                borderBottomLeftRadius: "27px",
-                borderBottomRightRadius: "27px",
-                borderTopRightRadius: "27px",
-                padding: "2rem",
               }}
             >
               <MKBox
@@ -298,6 +310,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
                   color="light"
                   circular={true}
                   endIcon={<ArrowDropDown />}
+                  fontSize={{ sx: "small" }}
                   sx={{
                     borderColor: "#344767",
                     color: "#344767 !important",
