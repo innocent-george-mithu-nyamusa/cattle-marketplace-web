@@ -7,7 +7,7 @@ import { stringAvatar } from "../../utils/functions";
 function MainTopNavigation() {
   return (
     <MKBox
-      display="flex"
+      display={{ xs: "none", lg: "flex" }}
       flexDirection="row"
       justifyContent="space-between"
       alignItems="center"
