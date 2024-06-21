@@ -88,7 +88,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
   return (
     <Grid container fullWidth>
       {/* Sidebar Containing Grid */}
-      <Grid container xs={12} md={2} lg={2}>
+      <Grid container xs={12} sm={3} md={3} lg={2}>
         <Link to="/">
           <MKBox component="img" src={logoCT} alt="Livestock Marketplace" maxWidth="175px" m={1} />
         </Link>
@@ -196,7 +196,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
           </Accordion>
         </MKBox>
       </Grid>
-      <Grid container xs={12} md={10} lg={10}>
+      <Grid container xs={12} sm={9} md={9} lg={10}>
         {/* Top Navigation */}
         <MainTopNavigation />
         {/* Changing Area  */}
@@ -214,8 +214,9 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
             }}
           >
             <MKBox
+              display={{ xs: "none", sm: "none", md: "block" }}
+              width={{ lg: "15%" }}
               sx={{
-                width: "15%",
                 height: "3rem",
                 float: "left",
                 borderBottom: "3rem solid white",
@@ -231,6 +232,7 @@ function AnimalsHomepage({ animalType, animalBreed, animalName }) {
             </MKBox>
 
             <MKBox
+              borderTopLeftRadius={{ xs: "27px", md: "27px" }}
               sx={{
                 width: "100%",
                 marginTop: "3rem",
