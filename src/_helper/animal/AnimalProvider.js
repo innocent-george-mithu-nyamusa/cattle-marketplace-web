@@ -7,8 +7,6 @@ const AnimalProvider = (props) => {
   const [allAnimals, setAllAnimals] = useState([]);
   const [selectedAnimal, setSelectedAnimal] = useState({});
 
-  console.log(selectedAnimal);
-
   const handleListAnimal = (animalID, otherData) => {
     const enListAnimal = async (id, animalData) => {
       try {
