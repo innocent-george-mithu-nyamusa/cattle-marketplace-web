@@ -66,12 +66,12 @@ export default function AppRouter() {
                   <Route
                     exact
                     path={`${process.env.PUBLIC_URL}`}
-                    element={<Navigate to={`${process.env.PUBLIC_URL}/login`} />}
+                    element={<Navigate to={`${process.env.PUBLIC_URL}/home`} />}
                   />
                   <Route
                     exact
                     path={`/`}
-                    element={<Navigate to={`${process.env.PUBLIC_URL}/login`} />}
+                    element={<Navigate to={`${process.env.PUBLIC_URL}/home`} />}
                   />
                 </>
               )}
@@ -79,8 +79,8 @@ export default function AppRouter() {
             {getRoutes(routes)}
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/login" element={<SignIn />} />
-            <Route path="/" element={<Presentation />} />
-            <Route path="*" element={<Navigate to="/" />} />
+            <Route path="/home" element={<Presentation />} />
+            <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
         </Suspense>
       </>
