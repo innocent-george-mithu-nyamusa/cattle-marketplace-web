@@ -40,7 +40,13 @@ function AnimalCard({ id, img, animalBreed, animalType, animalName, animalYearsA
 
   return (
     <Card
-      maxWidth={{ xs: "100%", lg: "calc(100%/4)" }}
+      width={{
+        xs: "100%",
+        sm: "calc(100%/3)",
+        md: "calc(100%/3)",
+        lg: "calc(100%/4)",
+        xl: "calc(100%/4)",
+      }}
       sx={{
         borderRadius: "10px",
         height: "fit-content",
