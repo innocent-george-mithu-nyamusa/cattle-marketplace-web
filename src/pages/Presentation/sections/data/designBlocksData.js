@@ -423,7 +423,7 @@ export default [
   },
   {
     title: "Goat Breeds",
-    description: "50+ goat breeds to chose in any ratio of choice = kids to adult goats.",
+    description: "50+ goat breeds to chose in any ratio of choice kids to adult goats.",
     items: [
       {
         image: `${boerKid}`,
