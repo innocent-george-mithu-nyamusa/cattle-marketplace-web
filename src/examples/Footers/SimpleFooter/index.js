@@ -66,7 +66,7 @@ function SimpleFooter({ company, links, light }) {
           color={light ? "white" : "text"}
           fontSize={size.sm}
         >
-          &copy; {new Date().getFullYear()},
+          &copy; {new Date().getFullYear()} -
           <Link href={href} target="_blank">
             <MKTypography variant="button" fontWeight="medium" color={light ? "white" : "dark"}>
               &nbsp; PixelsPulse &nbsp;
