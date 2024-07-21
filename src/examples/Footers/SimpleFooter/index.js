@@ -69,7 +69,7 @@ function SimpleFooter({ company, links, light }) {
           &copy; {new Date().getFullYear()},
           <Link href={href} target="_blank">
             <MKTypography variant="button" fontWeight="medium" color={light ? "white" : "dark"}>
-              &nbsp; pixelsZw &nbsp;
+              &nbsp; PixelsPulse &nbsp;
             </MKTypography>
           </Link>
         </MKBox>
