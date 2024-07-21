@@ -56,8 +56,9 @@ function SignUpBasic() {
   const handleSetFarmer = () => setFarmer(!farmer);
 
   const handleFormSubmission = async (signUpFormData) => {
+    const registrationData = { rememberMe: rememberMe, farmer: farmer, ...signUpFormData };
     setLoading(true);
-    const result = await signUpUser(signUpFormData);
+    const result = await signUpUser(registrationData);
 
     console.log(result);
     reset();
