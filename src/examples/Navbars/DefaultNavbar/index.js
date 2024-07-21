@@ -488,16 +488,6 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             {renderNavbarItems}
           </MKBox>
           <MKBox display="flex" justifyContent="space-between" ml={{ xs: "auto", lg: 0 }}>
-            <MKButton
-              component={Link}
-              to="/sign-up"
-              variant="text"
-              color="primary"
-              size="medium"
-              m={1.5}
-            >
-              Sign up
-            </MKButton>
             {action &&
               (action.type === "internal" ? (
                 <MKButton
