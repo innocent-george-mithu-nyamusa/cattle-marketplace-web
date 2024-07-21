@@ -46,12 +46,14 @@ function SignUpBasic() {
   const { signUpUser } = useContext(UserContext);
 
   const [rememberMe, setRememberMe] = useState(false);
+  const [farmer, setFarmer] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showAlert, setAlert] = useState(false);
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+  const handleSetFarmer = () => setFarmer(!farmer);
 
   const handleFormSubmission = async (signUpFormData) => {
     setLoading(true);
@@ -75,8 +77,8 @@ function SignUpBasic() {
         routes={routes}
         action={{
           type: "external",
-          route: "https://livestock-marketplace.co.zw/",
-          label: "Download Apps",
+          route: `${process.env.PUBLIC_URL}/login`,
+          label: "Sign In",
           color: "info",
         }}
         transparent
@@ -118,7 +120,13 @@ function SignUpBasic() {
                 <MKTypography variant="h4" fontWeight="medium" color="white" mt={1}>
                   Create your account
                 </MKTypography>
-                <Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
+                <Grid
+                  container
+                  spacing={3}
+                  display={{ xs: "none", sm: "flex", md: "flex", lg: "flex", xl: "flex" }}
+                  justifyContent="center"
+                  sx={{ mt: 1, mb: 2 }}
+                >
                   <Grid item xs={2}>
                     <MKTypography component={MuiLink} href="#" variant="body1" color="white">
                       <LocalPhoneIcon color="inherit" />
@@ -131,7 +139,11 @@ function SignUpBasic() {
                   </Grid>
                 </Grid>
               </MKBox>
-              <MKBox pt={4} pb={3} px={3}>
+              <MKBox
+                pt={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }}
+                pb={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 4 }}
+                px={{ xs: 1, sm: 1, md: 3, lg: 3, xl: 3 }}
+              >
                 <MKBox component="form" onSubmit={handleSubmit(handleFormSubmission)} role="form">
                   <MKBox mb={1}>
                     <MKInput
@@ -187,16 +199,30 @@ function SignUpBasic() {
                     />
                   </MKBox>
                   <MKBox display="flex" alignItems="center" ml={-1}>
-                    <Switch checked={rememberMe} onChange={handleSetRememberMe} />
-                    <MKTypography
-                      variant="button"
-                      fontWeight="regular"
-                      color="text"
-                      onClick={handleSetRememberMe}
-                      sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
-                    >
-                      &nbsp;&nbsp;Remember me
-                    </MKTypography>
+                    <MKBox inherit>
+                      <Switch checked={rememberMe} onChange={handleSetRememberMe} />
+                      <MKTypography
+                        variant="button"
+                        fontWeight="regular"
+                        color="text"
+                        onClick={handleSetRememberMe}
+                        sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
+                      >
+                        &nbsp;Remember me
+                      </MKTypography>
+                    </MKBox>
+                    <MKBox inherit>
+                      <Switch checked={farmer} onChange={handleSetFarmer} />
+                      <MKTypography
+                        variant="button"
+                        fontWeight="regular"
+                        color="text"
+                        onClick={handleSetFarmer}
+                        sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
+                      >
+                        &nbsp;A farmer?
+                      </MKTypography>
+                    </MKBox>
                   </MKBox>
 
                   {showAlert ? (
