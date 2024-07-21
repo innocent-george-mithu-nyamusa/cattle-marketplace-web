@@ -99,9 +99,9 @@ function SimpleFooter({ company, links, light }) {
 
 // Setting default values for the props of SimpleFooter
 SimpleFooter.defaultProps = {
-  company: { href: "http://pixels.co.zw/", name: "pixelsZW" },
+  company: { href: "http://pixels.co.zw/", name: "PixelPulse" },
   links: [
-    { href: "http://pixels.co.zw/", name: "pixelsZW" },
+    { href: "http://pixels.co.zw/", name: "PixelPulse" },
     { href: "http://pixels.co.zw/#", name: "About Us" },
     { href: "http://pixels.co.zw/#", name: "Blog" },
     { href: "http://pixels.co.zw/#", name: "Licenses" },
