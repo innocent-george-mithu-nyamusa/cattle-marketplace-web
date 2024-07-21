@@ -69,8 +69,8 @@ function SignInBasic() {
         routes={routes}
         action={{
           type: "external",
-          route: "https://livestock-marketplace.co.zw/",
-          label: "Download Apps",
+          route: `${process.env.PUBLIC_URL}/sign-up/`,
+          label: "Sign Up",
           color: "info",
         }}
         transparent
@@ -194,7 +194,7 @@ function SignInBasic() {
           </Grid>
         </Grid>
       </MKBox>
-      <MKBox width="100%" position="absolute" zIndex={2} bottom="1.625rem">
+      <MKBox width="100%" position="absolute" zIndex={0} bottom="1.625rem">
         <SimpleFooter light />
       </MKBox>
     </>
