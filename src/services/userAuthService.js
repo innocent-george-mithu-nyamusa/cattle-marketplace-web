@@ -78,6 +78,9 @@ export const createUserAccount = async (form) => {
       lastname: form.lastname,
       phone: form.phone,
       email: form.email,
+      farmer: form.farmer,
+      rememberMe: form.rememberMe,
+      accessLevel: "user",
     })
       .then((userCredential) => {
         console.log(userCredential);
