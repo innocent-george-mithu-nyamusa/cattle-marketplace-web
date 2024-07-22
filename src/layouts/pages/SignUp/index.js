@@ -110,7 +110,7 @@ function SignUpBasic() {
         mx="auto"
         position="relative"
         zIndex={2}
-        marginTop={{ xs: 2 }}
+        marginTop={{ xs: 4 }}
       >
         <Grid container spacing={1} justifyContent="center" alignItems="center" height="100%">
           <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
