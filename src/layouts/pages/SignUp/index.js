@@ -45,18 +45,18 @@ function SignUpBasic() {
 
   const { signUpUser } = useContext(UserContext);
 
-  const [rememberMe, setRememberMe] = useState(false);
+  // const [rememberMe, setRememberMe] = useState(false);
   const [farmer, setFarmer] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showAlert, setAlert] = useState(false);
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
-  const handleSetRememberMe = () => setRememberMe(!rememberMe);
+  // const handleSetRememberMe = () => setRememberMe(!rememberMe);
   const handleSetFarmer = () => setFarmer(!farmer);
 
   const handleFormSubmission = async (signUpFormData) => {
-    const registrationData = { rememberMe: rememberMe, farmer: farmer, ...signUpFormData };
+    const registrationData = { farmer: farmer, ...signUpFormData };
     setLoading(true);
     const result = await signUpUser(registrationData);
 
@@ -110,7 +110,7 @@ function SignUpBasic() {
         mx="auto"
         position="relative"
         zIndex={2}
-        marginTop={{ xs: 4 }}
+        marginTop={{ xs: 0 }}
       >
         <Grid container spacing={1} justifyContent="center" alignItems="center" height="100%">
           <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
@@ -209,18 +209,6 @@ function SignUpBasic() {
                   </MKBox>
                   <MKBox display="flex" alignItems="center" ml={-1}>
                     <MKBox>
-                      <Switch checked={rememberMe} onChange={handleSetRememberMe} />
-                      <MKTypography
-                        variant="button"
-                        fontWeight="regular"
-                        color="text"
-                        onClick={handleSetRememberMe}
-                        sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
-                      >
-                        &nbsp;Remember me
-                      </MKTypography>
-                    </MKBox>
-                    <MKBox>
                       <Switch checked={farmer} onChange={handleSetFarmer} />
                       <MKTypography
                         variant="button"
@@ -229,7 +217,7 @@ function SignUpBasic() {
                         onClick={handleSetFarmer}
                         sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
                       >
-                        &nbsp;A farmer?
+                        &nbsp;Are you a farmer?
                       </MKTypography>
                     </MKBox>
                   </MKBox>
