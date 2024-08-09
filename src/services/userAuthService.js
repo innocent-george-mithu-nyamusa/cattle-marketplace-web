@@ -1,6 +1,6 @@
 import { auth } from "config/firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
-import { getDoc, setDoc, doc, collection } from "firebase/firestore";
+import { setDoc, doc, collection } from "firebase/firestore";
 
 import { db } from "../config/firebase";
 
@@ -91,6 +91,7 @@ export const createUserAccount = async (form) => {
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
+
         console.log(errorCode);
         console.log(errorMessage);
 
