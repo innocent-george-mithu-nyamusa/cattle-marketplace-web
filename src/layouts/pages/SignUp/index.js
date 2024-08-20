@@ -64,7 +64,7 @@ function SignUpBasic() {
     reset();
 
     if (result.success === true) {
-      navigate("/");
+      navigate("/livestock/cattle/mashona");
     } else {
       setMessage(result.error);
       setAlert(true);
