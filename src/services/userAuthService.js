@@ -18,10 +18,10 @@ export const signInUser = async (form) => {
     return await signInWithEmailAndPassword(auth, form.email, form.password)
       .then((userCredential) => {
         let user = userCredential.user;
-        
+
         console.log(user);
         const email = user.email;
-        
+
         return { success: true, email };
       })
       .catch((error) => {
