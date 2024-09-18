@@ -26,7 +26,7 @@ function AnimalCard({ id, img, animalBreed, animalType, animalName, animalYearsA
 
   const handleNavigation = () => {
     pickSelectedItem(id);
-    navigate(`${process.env.PUBLIC_URL}/${animalType}/${animalName}`);
+    navigate(`${process.env.PUBLIC_URL}/animal/${animalType}/${animalName}`);
   };
   //1.
 
