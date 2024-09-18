@@ -44,8 +44,6 @@ import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 
 import Homepage from "pages/Homepage";
-import AnimalDetailPage from "pages/AnimalDetailsPage";
-
 const routes = [
   {
     name: "Livestock",
@@ -61,12 +59,6 @@ const routes = [
             route: "/livestock/cattle/mashona",
             component: <Homepage />,
             properties: { animalType: "cattle", animalBreed: "mashona", animalName: "cattle" },
-          },
-          {
-            name: "details",
-            route: "/detail",
-            component: <AnimalDetailPage />,
-            properties: { animalType: "cattle", animalBreed: "hereford", animalName: "cattle" },
           },
           {
             name: "simmental",
